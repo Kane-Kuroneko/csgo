@@ -1,0 +1,48 @@
+{
+	"compilerOptions" : {
+		"allowJs" : true ,
+		"skipLibCheck" : true ,
+		"allowSyntheticDefaultImports" : true ,
+		"allowUnusedLabels" : true ,
+		"baseUrl" : "." ,
+		"declaration" : true ,
+		"esModuleInterop" : true ,
+		"experimentalDecorators" : true ,
+		"jsx" : "react" ,
+		"resolveJsonModule" : true ,
+		"outDir" : "dist" ,
+		"checkJs" : true ,
+		"strictFunctionTypes" : false ,
+		"strict" : false ,
+		"strictBindCallApply" : false ,
+		"strictNullChecks" : false ,
+		"allowUnreachableCode" : true ,
+		"module" : "ESNext" ,
+		"moduleResolution" : "node" ,
+		"emitDeclarationOnly" : true ,
+		"noImplicitAny" : false ,
+		"noImplicitReturns" : false ,
+		"noImplicitUseStrict" : false ,
+		"noUnusedLocals" : false ,
+		"noUnusedParameters" : false ,
+		"allowImportingTsExtensions" : true ,
+		"allowUmdGlobalAccess" : true ,
+		"allowArbitraryExtensions" : true ,
+		"noStrictGenericChecks" : true ,
+		"paths" : {
+			"@/*" : ["./src/*"]
+		} ,
+		"preserveConstEnums" : true ,
+		"removeComments" : true ,
+		"target" : "ESNext" ,
+		"allowSyntheticDefaultImports" : true 
+	} ,
+	"include" : ["."] ,
+	"exclude" : [
+		"dist",
+		"node_modules" ,
+		".git" ,
+		".idea" ,
+		".svn"
+	]
+}

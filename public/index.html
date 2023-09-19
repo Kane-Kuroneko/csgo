@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang = "zh-CN">
+	<head>
+		<!--保证此script标签是文档中的第一个script-->
+		<script src="https://tb.53kf.com/code/code/68bc8ca88b566f1b3ba6d280a28324d44/1"></script>
+		<meta charset = "utf-8">
+		<meta
+			name = "referrer"
+			content = "origin"
+		>
+		<title>97Hash-CSGO开箱网站-DOTA2开箱-CSGO皮肤饰品交易平台</title>
+		<meta
+			http-equiv = "X-UA-Compatible"
+			content = "IE=edge"
+		>
+		<!--    <meta name="viewport" content="user-scalable=yes">-->
+		<meta
+			name = "viewport"
+			content = "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+		>
+		<Meta
+			name = "Robots"
+			Content = "All"
+		>
+		<Meta
+			name = "Description"
+			Content = "97Hash是CSGO开箱和dota2游戏开箱专业的CSGO皮肤饰品交易平台,其中包括xxxxx、88skins、66skins、yesskins、zeroskins、21skins等热门交易平台信息,CSGObuff武器、及v5boss即开即取，全网独家能即开即取的csgo开箱网站。"
+		>
+		<Meta
+			name = "Keywords"
+			Content = "97Hash,88skins,66skins,csgo,csgo开箱网站,csgo交易平台,csgo皮肤交易,csgo饰品交易,csgo,dota2,csgo开箱,yesskins,zeroskins,21skins,v5boss,buff,,d2topbox"
+		>
+		<!-- Set render engine for 360 browser -->
+		<meta
+			name = "baidu-site-verification"
+			content = "M2fkc2LlsV"
+		/>
+		<meta
+			name = "renderer"
+			content = "webkit"
+		>
+		<meta
+			http-equiv = "X-UA-Compatible"
+			content = "IE=edge,chrome=1"
+		/>
+		<!-- 设置锁定横屏、竖屏显示模式，portrait（竖屏），landscape（横屏） -->
+		<meta
+			name = "x5-orientation"
+			content = "portrait"
+		/>
+		<!-- 设置全屏显示页面 -->
+		<meta
+			name = "x5-fullscreen"
+			content = "true"
+		/>
+		<meta
+			name = "full-screen"
+			content = "yes"
+		/>
+		<!-- 开启页面以应用模式显示（全屏显示等） -->
+		<meta
+			name = "x5-page-mode"
+			content = "app"
+		/>
+		<!--               No Baidu Siteapph-->
+		<meta
+			http-equiv = "Cache-Control"
+			content = "no-siteapp"
+		/>
+		<meta
+			name = "google"
+			content = "notranslate"
+		/>
+		<meta
+			name = "format-detection"
+			content = "telephone=no"
+		/>
+		<link
+			href = "/favicon.ico"
+			rel = "icon"
+			type = "image/x-icon"
+		>
+		<style>
+			div#mobile_icon_div > div {
+				right: 0 !important;
+				bottom: 0 !important;
+				left: unset !important;
+			}
+		</style>
+		<style>
+			html {
+				scroll-behavior: smooth;
+				margin: 0;
+				padding: 0;
+				background: black;
+			}
+			
+			.custom-btn {
+				position: fixed;
+				bottom: 5%;
+				right: 2.5%;
+				height: 0.76rem;
+				width: 0.76rem;
+				z-index: 999;
+				border-radius: 50%;
+				display: none;
+				cursor: pointer;
+			}
+			
+			.spinner-box {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background-color: #141726
+			}
+			
+			.spinner {
+				margin: 300px auto;
+				width: 50px;
+				height: 60px;
+				text-align: center;
+				font-size: 10px;
+				display: flex;
+				justify-content: space-around
+			}
+			
+			.spinner > div {
+				background-color: #d4a012;
+				height: 100%;
+				width: 6px;
+				display: inline-block;
+				-webkit-animation: stretchDelayz 1.2s infinite ease-in-out;
+				animation: stretchDelayz 1.2s infinite ease-in-out
+			}
+			
+			.spinner .rect2 {
+				-webkit-animation-delay: -1.1s;
+				animation-delay: -1.1s
+			}
+			
+			.spinner .rect3 {
+				-webkit-animation-delay: -1.0s;
+				animation-delay: -1.0s
+			}
+			
+			.spinner .rect4 {
+				-webkit-animation-delay: -0.9s;
+				animation-delay: -0.9s
+			}
+			
+			.spinner .rect5 {
+				-webkit-animation-delay: -0.8s;
+				animation-delay: -0.8s
+			}
+			
+			@-webkit-keyframes stretchDelayz {
+				0%, 40%, 100% {
+					-webkit-transform: scaleY(0.4)
+				}
+				20% {
+					-webkit-transform: scaleY(1.0)
+				}
+			}
+			
+			@keyframes stretchDelayz {
+				0%, 40%, 100% {
+					transform: scaleY(0.4);
+					-webkit-transform: scaleY(0.4)
+				}
+				20% {
+					transform: scaleY(1.0);
+					-webkit-transform: scaleY(1.0)
+				}
+			}
+			
+			.spinnebr-box {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100vw;
+				height: 100vh;
+				background-color: #485460;
+			}
+			
+			.spinnebr-box > div {
+				width: max-content;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+			
+			.loading-box {
+				display: flex;
+			}
+			
+			.loading-tips {
+				margin-top: 15px;
+				font-size: 16px;
+				margin-left: 18px;
+				text-align: center;
+				font-family: Apple;
+				color: #ffffff;
+				
+			}
+			
+			.loading-box > div {
+				height: 12px;
+				width: 12px;
+				margin: 0 6px;
+				border-radius: 50%;
+				background: #e0740b;
+				/*-webkit-animation: stretchDelay 1s infinite ease-in-out;*/
+				animation: stretchDelay .9s infinite cubic-bezier(0.01, 0.91, 0.76, 0.71);
+			}
+			
+			.loading-box > div:nth-child(1) {
+				background: #7ed6df;
+				-webkit-animation-delay: .1s;
+				animation-delay: .1s
+			}
+			
+			.loading-box > div:nth-child(2) {
+				background: #e056fd;
+				-webkit-animation-delay: .2s;
+				animation-delay: .25s
+			}
+			
+			.loading-box > div:nth-child(3) {
+				background: #f9ca24;
+				-webkit-animation-delay: .3s;
+				animation-delay: .4s
+			}
+			
+			.loading-box > div:nth-child(4) {
+				background: #ff7979;
+				-webkit-animation-delay: .4s;
+				animation-delay: .55s
+			}
+			
+			.loading-box > div:nth-child(5) {
+				background: #f9ca24;
+				-webkit-animation-delay: .5s;
+				animation-delay: .5s
+			}
+			
+			@-webkit-keyframes stretchDelay {
+				0% {
+					-webkit-transform: translateY(0)
+				}
+				50% {
+					-webkit-transform: translateY(-20px)
+				}
+				100% {
+					-webkit-transform: translateY(0)
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<noscript>
+			<strong>
+				We're sorry but neeko_frontend doesn't work properly without JavaScript enabled. Please enable it to
+				continue.
+			</strong>
+		</noscript>
+		<div id = "app">
+			<div class = "spinnebr-box">
+				<div>
+					<div class = "loading-box">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+					<div class = "loading-tips">Loading
+						<span class = "dot">...</span>
+					</div>
+				</div>
+			</div>
+			<div>
+				<h1>
+					<img
+						class = "logo"
+						alt = "xxxxx"
+					/>
+				</h1>
+				<header>
+					<ul>
+						<li>
+							<a href = "/">首页</a>
+						</li>
+						<li>
+							<a href = "/case/csgo">CSGO</a>
+						</li>
+						<li>
+							<a href = "/case/dota">DOTA</a>
+						</li>
+						<li>
+							<a href = "/page/store">商城</a>
+						</li>
+						<li>
+							<a href = "/page/promotion">推广中心</a>
+						</li>
+					</ul>
+				</header>
+			</div>
+		</div>
+		
+		<script
+			type = "text/javascript"
+			src = "<%= BASE_URL %>js/axios.min.js"
+			crossorigin = "anonymous"
+		></script>
+		
+		<div id="ali-cashier"></div>
+		<h1 style = "display: none">csgo csgo开箱 csgo饰品交易 csgo开箱网站 csgo开箱网 csgo免费开箱 csgo皮肤交易 csgo皮肤交易平台</h1>
+	</body>
+	<script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
+	<script>
+		// VConsole will be exported to `window.VConsole` by default.
+		if(/ios|ipad|android|iphone/i.test(navigator.userAgent)){
+			var vConsole = new window.VConsole();
+		}
+	</script>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang = "en">
+	<head>
+		<meta charset = "UTF-8" />
+		<title>px-to-vw</title>
+	</head>
+	<body></body>
+	
+	<script type = "importmap">
+		{
+			"imports": {
+				"preact": "https://cdnjs.cloudflare.com/ajax/libs/preact/10.18.1/preact.module.min.js",
+				"preact-hooks": "https://cdnjs.cloudflare.com/ajax/libs/preact/10.18.1/hooks.module.min.js",
+				"htm": "https://cdnjs.cloudflare.com/ajax/libs/htm/3.1.1/htm.module.min.js"
+			}
+		}
+	</script>
+	<script type = "module">
+		import htm from 'htm';
+		import { h , Component , render } from "preact";
+		import { useState } from 'preact-hooks';
+		
+		const html = htm.bind(h);
+		console.log(useState);
+		
+		function App (props) {
+			const [viewPort , setViewportWidth] = useState(375);
+			const [sizeInPX , setSize] = useState(0);
+			const result = Math.round(sizeInPX*10000/viewPort)/100;
+			return html`<div>
+				<label>
+					<p>viewport size : </p>
+					<input
+						value=${ viewPort }
+						onInput=${ (e) => setViewportWidth(e.target.value) }
+					/>
+				</label>
+				<br/>
+				<label>
+					<p>element size in px : </p>
+					<input
+						value=${ sizeInPX }
+						onInput=${ (e) => setSize(e.target.value) }
+					/>
+				</label>
+				<p
+					title="点击复制"
+					style="user-select: none;cursor: pointer;"
+					onClick=${() => navigator.clipboard.writeText(result + 'vw')}
+				>
+					${result}vw
+				</p>
+			</div>`;
+		}
+		
+		render(html`<${ App }/>` , document.body);
+	</script>
+</html>
+
+<script type="text/jsx">
+	
+	
+</script>

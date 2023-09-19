@@ -1,0 +1,2203 @@
+/*
+***
+***  min-width 包含值
+***  max-width 包含值
+***
+ */
+
+/* 手机 */
+@media screen and (max-width: 360px){
+  html{
+    font-size: 40px;
+  }
+}
+
+@media screen and (min-width: 360px){
+  html{
+    font-size: 48px;
+  }
+}
+
+@media screen and (min-width: 375px){
+  html{
+    font-size: 50px
+  }
+}
+
+@media screen and (min-width: 400px){
+  html{
+    font-size: 55px
+  }
+}
+
+@media screen and (min-width: 480px){
+  html{
+    font-size: 64px
+  }
+}
+
+@media screen and (min-width: 640px){
+  html{
+    font-size: 75px
+  }
+}
+
+@media screen and (min-width: 767px){
+  html{
+    font-size: 70px
+  }
+}
+
+@media screen and (max-width: 800px){
+  .layout{
+    min-width: 98%;
+  }
+  
+  .custom-btn{
+    bottom: 12%;
+  }
+  
+  .up-hall .battle-top-box > img{
+    width: 60%;
+    position: absolute;
+    top: 62%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .nav-up-user{
+    justify-content: center;
+  }
+  
+  .story-item{
+    width: 95%;
+    margin: 20px auto 20px;
+  }
+  
+  .my-attention ul{
+    flex-wrap: wrap;
+  }
+  
+  .attention-item{
+    width: 98%;
+    margin: 10px auto;
+  }
+  
+  .upgrade-his > div:nth-child(1){
+    height: 2rem;
+  }
+  
+  .sell-price span{
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .status-price{
+    font-size: 13px;
+  }
+  
+  .status-price i{
+    font-size: 14px;
+  }
+  
+  .sell-price i{
+    font-size: 14px;
+    font-weight: unset;
+  }
+  
+  /*.login-btn{*/
+  /*  margin: 15px auto;*/
+  /*}*/
+  
+  .user-total-balance i{
+    font-size: 14px;
+  }
+  
+  .n-login-tit{
+    margin: 5px auto 20px;
+  }
+  
+  .close-div img{
+    width: 13%;
+  }
+  
+  .item-n-skins{
+    width: 32%;
+  }
+  
+  .task-data{
+    padding-left: 2px;
+  }
+  
+  .n-btn{
+    font-size: 12px;
+    line-height: 19px;
+    height: 19px;
+    width: 65px;
+    text-align: center;
+  }
+  
+  .pro-n-line{
+    margin-top: 3px;
+    width: 50%;
+  }
+  
+  .n-pro-flex{
+    margin-top: 3px;
+  }
+  
+  .task-n-info{
+    padding: 0 5px;
+  }
+  
+  .info-n-pro img{
+    width: 40px;
+    object-fit: contain;
+  }
+  
+  .info-n-pro{
+    align-items: baseline;
+  }
+  
+  .notice-shell{
+    width: 100%;
+    padding: 0;
+    display: unset;
+  }
+  
+  .menu-content > p{
+    padding: 0 10px;
+  }
+  
+  .upgrade-btn-box{
+    margin: 0 auto 10px;
+  }
+  
+  .drop-gun-img{
+    aspect-ratio: 1.4;
+    padding-top: 0;
+  }
+  
+  .invite-btn img{
+    width: 85%;
+  }
+  
+  .btn-n-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .ann-data{
+    width: 98%;
+    padding: 5px 0 0 5px;
+    height: 145px;
+  }
+  
+  .n-roll-skins{
+    justify-content: space-between;
+  }
+  
+  .skins-item{
+    width: 27%;
+    margin: 10px 0;
+    height: auto;
+  }
+  
+  .btn-n-box p{
+    margin-top: 0;
+  }
+  
+  .n-count-time > span{
+    margin: 0 3px;
+  }
+  
+  .roll-type{
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  .roll-type > img{
+    margin-right: 5px;
+  }
+  
+  .ver-user .ver-item{
+    width: 49.5%;
+  }
+  
+  .friend-enemy{
+    min-height: auto;
+  }
+  
+  .my-bag-item{
+    width: .8rem;
+    height: .8rem;
+  }
+  
+  .game-tips{
+    min-width: auto;
+  }
+  
+  .friend-enemy span{
+    font-size: 15px;
+  }
+  
+  .unstart-state .invite-conuntdown{
+    width: max-content;
+    margin: 0 auto .1rem;
+  }
+  
+  .luck-gun-img .lucky-gun{
+    width: 60%;
+  }
+  
+  .luck-user-info .luck-portait > img{
+    width: 40%;
+  }
+  
+  .creat-battle > .btn{
+    width: 43%;
+  }
+  
+  .battle-top-box{
+    min-height: 3rem;
+  }
+  
+  .battle-room-tap{
+    margin-top: auto;
+  }
+  
+  .battle-top-box{
+    min-height: 230px;
+    background: url("../image/battle/battlebgm.png") no-repeat top left / 100%;
+  }
+  
+  .waiting-box{
+    margin: .3rem auto 1rem;
+  }
+  
+  .roll-ranking li{
+    width: 100%;
+    margin: 0 auto .2rem;
+    padding: 10px 0;
+    height: 80px;
+  }
+  
+  .battle-room-tap > div:nth-of-type(1){
+    width: 33%;
+    height: 30px;
+  }
+  
+  .ranking-tap{
+    width: 65%;
+  }
+  
+  .ranking-tap > div{
+    width: 50%;
+    height: 30px;
+  }
+  
+  .home-box-img.active4{
+    height: 1rem;
+  }
+  
+  .tap-i{
+    width: 30px;
+    height: 28px;
+    line-height: 30px;
+  }
+  
+  .tap-name{
+    width: auto;
+    height: 100%;
+    flex: 1;
+    line-height: 30px;
+  }
+  
+  .winning-box{
+    position: relative;
+  }
+  
+  .success-rate > div{
+  
+  }
+  
+  .container{
+    /*padding-top: 90px;*/
+  }
+  
+  .roll-ranking ul > li:nth-of-type(1){
+    background: url("../image/battle/onem.png") no-repeat top left / 100%;
+  }
+  
+  .roll-ranking ul > li:nth-of-type(2){
+    background: url("../image/battle/towm.png") no-repeat top left / 100%;
+  }
+  
+  .roll-ranking ul > li:nth-of-type(3){
+    background: url("../image/battle/threem.png") no-repeat top left / 100%;
+  }
+  
+  .rank-num{
+    height: 50px;
+    width: 60px;
+    margin: auto 10px;
+  }
+  
+  .roll-luck-item .invite-btn{
+    margin-right: 1%;
+    flex: 1;
+    margin-left: 0;
+  }
+  
+  .invite-btn > div{
+    height: 50px;
+    width: 100%;
+  }
+  
+  
+  .rank-num > div{
+    font-size: 40px;
+  }
+  
+  .bottom-avatar{
+    height: 50px;
+    width: 50px;
+    margin: auto 0;
+  }
+  
+  .check-more .new-welfare{
+    left: -10%;
+    top: -34%;
+  }
+  
+  .win-infi > div{
+    font-size: 32px;
+    padding-top: 20%;
+    padding-left: 14%;
+  }
+  
+  .lose-infi > div{
+    font-size: 32px;
+    padding-top: 20%;
+    padding-left: 14%;
+  }
+  
+  .user-total-balance{
+    display: unset;
+    align-items: unset;
+    margin-right: 0;
+  }
+  
+  .new-welfare{
+    top: -40%;
+    left: 90%;
+  }
+  
+  .bag-label{
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  
+  .bag-label:after{
+    content: '';
+    width: 30%;
+  }
+  
+  .bag-label > div{
+    width: 27%;
+    padding: 10px 0;
+  }
+  
+  .menu-header{
+    min-width: auto;
+    padding-top: 60px;
+  }
+  
+  .bag-price{
+    font-size: 14px;
+  }
+  
+  .content-router{
+    min-width: auto;
+  }
+  
+  .active-nav{
+    background-size: auto 100%;
+  }
+  
+  .home-box-img.active5{
+    height: 1rem;
+  }
+  
+  .roll-ranking > div:nth-child(1){
+    justify-content: space-around;
+    width: auto;
+  }
+  
+  .web-info{
+    height: max-content;
+  }
+  
+  .account .user-info-m{
+    width: 100%;
+  }
+  
+  .nav-user{
+    width: 100%;
+  }
+  
+  .promotion{
+    width: 100%;
+  }
+  
+  .modal-bg-notice{
+    height: 100vh;
+  }
+  
+  .active-page .nav-bg{
+    background: none;
+  }
+  
+  .modal-box-bg-notice{
+    width: 94%;
+    margin: auto;
+  }
+  
+  .notice-shell .no-pop{
+    font-size: 12px;
+  }
+  
+  .notice-content{
+    /*background: url('../image/noticebgm.png') no-repeat top left / 100% 100%;*/
+  }
+  
+  .top-rank{
+    width: 25%;
+  }
+  
+  .title-box{
+    padding: 8px 4%;
+    font-size: 12px;
+  }
+  
+  .bag-goods-modal > div > div{
+    width: 31.5%;
+  }
+  
+  .notice-content{
+    height: 50vh;
+  }
+  
+  .bag-goods-box{
+    margin-top: 0;
+  }
+  
+  .bag-goods{
+    padding: 0 15px;
+    margin-top: 0;
+  }
+  
+  .roll-ranking ul{
+    width: 100%;
+    overflow-x: auto;
+    justify-content: left;
+    margin-top: 0;
+  }
+  
+  .roll-ranking ul::-webkit-scrollbar{
+    display: none;
+  }
+  
+  .common-bg{
+    padding: 0 5px;
+  }
+  
+  .prm-gamer{
+    padding: 18px 10px;
+    width: 48%;
+  }
+  
+  .ranking-bg{
+    background-size: contain;
+  }
+  
+  .ranking-bg.new{
+    background: url("../image/rollbgM.png") no-repeat top left / 100% auto;
+  }
+  
+  .upgrade-style{
+    margin-right: 10px;
+    font-size: 12px;
+  }
+  
+  .upgrade-style i{
+    font-size: 18px;
+  }
+  
+  .upgrade-box-seed{
+  
+  }
+  
+  .num-progress-music > div:nth-of-type(2){
+    flex: 30%;
+  }
+  
+  .notice-content > img:nth-child(1){
+    width: 43%;
+  }
+  
+  .inventory-search{
+    display: block;
+  }
+  
+  .notice-content > img:nth-child(4){
+    position: absolute;
+    width: 10%;
+    top: -6.5%;
+    right: 9%;
+  }
+  
+  .info-item-tradeUrl > div:nth-child(2){
+    padding: 0.2rem 0 0 0;
+  }
+  
+  .inventory-search > div:nth-of-type(2){
+    margin-top: 10px;
+  }
+  
+  .login-out-btn{
+    width: 100%;
+    font-size: .3rem;
+  }
+  
+  .record-goods{
+    width: 100%;
+  }
+  
+  .code-box{
+    width: 60%;
+  }
+  
+  .boxhis-article-img{
+    width: 100%;
+  }
+  
+  .boxhis-article-img > img{
+    width: 90%;
+    padding-right: 10px;
+  }
+  
+  .web-info{
+    width: 100%;
+    overflow: hidden;
+    justify-content: space-around;
+  }
+  
+  .search-type-label{
+    width: 100%;
+  }
+  
+  .notice-content > div{
+    padding: 20px 10px;
+  }
+  
+  .roll-box-left{
+    width: 100%;
+  }
+  
+  /*.del-box > div {*/
+  /*    background: url('../image/titleBg.png') no-repeat top left / 100% 70%;*/
+  /*}*/
+  .open-box-music{
+    top: 15%;
+    right: -60px;
+  }
+  
+  .money-upgrade{
+    background: none;
+  }
+  
+  .upgrade-container-top .num-progress-music{
+    background: none;
+    width: 100%;
+    margin: unset;
+  }
+  
+  .opn-box-bg{
+    /*background: url("../image/box/boxBgM.png") no-repeat top left  / auto 62%;*/
+  }
+  
+  .open-box-progress{
+    padding: 0 50px;
+    background-size: 56%;
+    background-position: center bottom;
+  }
+  
+  .prize-pool{
+    width: 100%;
+  }
+  
+  .box-img{
+    /*width: max-content;*/
+    margin: auto;
+  }
+  
+  .room-info-box{
+    display: flex;
+    padding: 20px 0 20px 0;
+  }
+  
+  .immeility-open{
+    height: 2rem;
+  }
+  
+  .room-info-box > li{
+    width: 100%;
+  }
+  
+  .round-user{
+    margin: .3rem 0 0 .4rem;
+  }
+  
+  .room-state-info{
+    overflow-x: auto;
+    margin-top: .2rem;
+  }
+  
+  .room-state-info::-webkit-scrollbar{
+    display: none;
+  }
+  
+  .drop-title{
+    width: 100%;
+    margin: .2rem auto;
+  }
+  
+  .winning-people{
+    width: 100%;
+    grid-template-columns:repeat(1, 1fr);
+    grid-column-gap: 0;
+  }
+  
+  .drop-title img{
+    width: 35%;
+  }
+  
+  .win-item{
+    padding: 5px;
+  }
+  
+  .roll-avator-luck > div{
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  .share-luck{
+    margin: 0 auto;
+  }
+  
+  .creat-battle{
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    margin: 20px auto 10px;
+  }
+  
+  .creat-battle > div:nth-child(1){
+    margin-right: 0;
+  }
+  
+  .festival-model{
+    background-size: 100% 100%;
+  }
+  
+  .home-title{
+    justify-content: space-around;
+    padding: .3rem 5px 0;
+  }
+  
+  .home-title img{
+    width: 25%;
+  }
+  
+  .luck-width .luck-gun-img{
+    width: 100%;
+  }
+  
+  .luck-width{
+    /*width: 130px;*/
+  }
+  
+  .router-nav{
+    justify-content: space-between;
+    background: #606060;
+    width: 96%;
+    padding: 0;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
+  .router-nav > div{
+    padding: 0;
+    margin: unset;
+    width: 100%;
+  }
+  
+  .user-nav{
+    padding: .1rem 0;
+    position: unset;
+    width: 25%;
+    height: 32px;
+    border-radius: 3px;
+    margin-left: 0;
+  }
+  
+  .router-nav > div > div{
+    padding: 0;
+    margin-left: 0;
+  }
+  
+  .user-nav a{
+    line-height: 32px;
+  }
+  
+  .user-nav.active{
+    background: #FCC601;
+  }
+  
+  .router-nav .user-nav.active a{
+    color: #141726;
+  }
+  
+  .router-nav .user-nav:hover a{
+    color: #141726;
+  }
+  
+  .process-ball-circle{
+    width: 50px;
+    height: 50px;
+  }
+  
+  .process-ball-circle i{
+    font-size: 32px;
+    line-height: 50px;
+  }
+  
+  /*.home-box-img {*/
+  /*    height: 2.5rem;*/
+  /*}*/
+  .fairGame{
+    top: 7%;
+    right: 71%;
+  }
+  
+  .list-title{
+    margin-top: .2rem;
+    margin-bottom: .2rem;
+    background-size: 100% auto;
+  }
+  
+  .hide-hover{
+    width: 100%;
+    margin: .1rem auto .15rem;
+    padding: 0 13px;
+    height: 25px;
+  }
+  
+  .portait{
+    width: 100%;
+    display: inline-block;
+  }
+  
+  .portait-lf > div:nth-child(1){
+    width: 100%;
+    height: 200px;
+  }
+  
+  .portait-btn{
+    margin: 5px auto;
+  }
+  
+  .hash-list-title{
+    margin: 0 .1rem;
+    width: 150px;
+  }
+  
+  .fair-game{
+    margin: .1rem auto 0;
+  }
+  
+  .filter-box-m li{
+    font-size: 12px;
+  }
+  
+  .chose-name p{
+    width: 100%;
+    font-weight: bold;
+  }
+  
+  .unchose-img{
+    border: 2px solid #FFFFFF;
+    height: 2rem;
+    border-radius: 10px;
+    background: transparent;
+  }
+  
+  .upgrade-back-m .phone-chose-box{
+    padding-top: .1rem;
+  }
+  
+  .slider-upgrade{
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  
+  .up-right{
+    background: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sure-upgrade{
+    width: 40%;
+    margin: unset;
+  }
+  
+  .money-upgrade > div{
+    background: none;
+  }
+  
+  .upgrade-btn{
+    clip-path: unset;
+    border-radius: 5px;
+    width: 100%;
+    height: .6rem;
+    background: #FFC608;
+    margin: 0;
+    font-size: .25rem;
+    font-weight: bold;
+  }
+  
+  .unchose-img > i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    font-size: 35px;
+    font-weight: bold;
+    color: #FFFFFE;
+  }
+  
+  .tradition-content > .grid-phone{
+    padding: 0 8px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .bot-img-info img:nth-of-type(4){
+    width: 60%;
+  }
+  
+  #app{
+    width: 100%;
+  }
+  
+  .about-company{
+    padding: 0 10px;
+  }
+  
+  .web-info-box{
+    display: block;
+    
+  }
+  
+  .web-info-box p:nth-child(1){
+    font-size: .3rem;
+    line-height: normal;
+    text-align: center;
+  }
+  
+  .web-info-box > div:nth-child(1){
+    margin: 0;
+  }
+  
+  .footer-nav{
+    width: 90%;
+  }
+  
+  .web-info-box p:nth-child(2){
+    font-size: .28rem;
+    line-height: normal;
+    text-align: center;
+  }
+  
+  .fetival-box{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .home-open-box{
+    grid-template-columns:repeat(2, 1fr);
+    padding: 0 10px;
+  }
+  
+  .layout-festival{
+    width: 80%;
+  }
+  
+  .player-avator-container > img:nth-of-type(1){
+    top: -328%;
+    width: 12%;
+  }
+  
+  .player-avator-container > img:nth-of-type(2){
+    top: -415%;
+  }
+  
+  .battle-tips{
+    background: none;
+    border: 0px solid;
+    width: 100%;
+    margin: auto;
+  }
+  
+  .stuff-box > div{
+    width: 46%;
+    margin-left: 4%;
+  }
+  
+  .box-dels > div{
+    height: 1.2rem;
+  }
+  
+  .box-dels img{
+    height: 100%;
+  }
+  
+  .stuff-box{
+    max-height: 280px;
+  }
+  
+  .box-dels p{
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 10px auto 30px;
+  }
+  
+  .player-avator-container{
+    height: 20px;
+  }
+  
+  .player-state{
+    width: 90%;
+    margin-top: 80px;
+  }
+  
+  .promotion-code{
+    display: flex;
+  }
+  
+  .promotion-code span:nth-child(2){
+    width: 45%;
+  }
+  
+  .roll-state{
+    width: 100%;
+  }
+  
+  .roll-share{
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .begining-or{
+    padding: 0;
+  }
+  
+  .battle-winner-good{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .battle-winner-good > div{
+    width: 2.5rem;
+  }
+  
+  .bag-tips p{
+    width: 100%;
+    font-size: 12px;
+    padding: 0 15px;
+  }
+  
+  .drop-del > div{
+    /*grid-template-columns: repeat(2, 1fr);*/
+    padding: 0 15px;
+  }
+  
+  .drop-del > div > div{
+    width: 100%;
+  }
+  
+  .up-hall .battle-top-box{
+    background: url("../image/upgrade/Hall/phonebg.png") no-repeat top left / 100%;
+    min-height: 270px;
+    height: auto;
+  }
+  
+  .likes-box{
+    flex-direction: column-reverse;
+    width: 98%;
+    margin: 20px auto 10px;
+  }
+  
+  .likes-box > div{
+    width: 100%;
+  }
+  
+  .name-sy{
+    text-align: center;
+  }
+  
+  .likes-item{
+    justify-content: space-between;
+  }
+  
+  .sy-name{
+    padding-left: 40px;
+  }
+  
+  .sy-list li .up-skins{
+    padding: 0 20px 0 0;
+  }
+  
+  .likes-item > div{
+    font-size: 13px;
+    padding: 0 10px;
+    font-weight: bold;
+    margin-left: 0;
+  }
+  
+  .video-top{
+    display: block;
+    padding-left: 0;
+    height: auto;
+    background: none;
+  }
+  
+  .video-idx{
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  
+  .video-idx > div{
+    width: 47%;
+    margin-bottom: 10px;
+  }
+  
+  .sy-list{
+    width: 98%;
+    height: auto;
+    margin: auto;
+  }
+  
+  .likes-item i{
+    font-size: 14px;
+    font-weight: 400;
+  }
+  
+  .screening{
+    display: flex;
+    width: 98%;
+    margin: 30px auto 0;
+    justify-content: space-around;
+  }
+  
+  .seed-title > div{
+    width: 33%;
+  }
+  
+  .search-box{
+    width: 98%;
+    margin: auto;
+    padding: 0;
+  }
+  
+  .home-title span{
+    font-size: .4rem;
+    padding: 0;
+    margin: 0 9px;
+  }
+  
+  .modal-box-notice{
+    max-height: 8rem;
+    overflow-y: scroll;
+  }
+  
+  .room-url{
+    position: unset;
+    width: 90%;
+    margin: auto;
+    padding: 0.2rem 0 .1rem 0;
+  }
+  
+  #menu-footer{
+    padding: .4rem .2rem;
+    min-width: auto;
+    background: url("../image/footerBGM.png") no-repeat left bottom / cover;
+  }
+  
+  .roll-room-box{
+    margin-top: 10px;
+  }
+  
+  .main-info-box{
+    padding-right: 0;
+    overflow-x: auto;
+    position: unset;
+    width: 100%;
+    margin: .1rem auto;
+    padding-left: 20px;
+  }
+  
+  .main-info-box::-webkit-scrollbar{
+    display: none;
+  }
+  
+  .main-info-box > .flex-layout{
+    width: 100%;
+  }
+  
+  .roll-time-text{
+    font-size: 12px;
+  }
+  
+  .main-info-box > div > div{
+    width: 3.2rem;
+    margin-right: 10px;
+  }
+  
+  .is-record{
+    width: 100%;
+    font-size: 14px;
+    margin: 10px 0;
+    height: auto;
+    line-height: 32px;
+  }
+  
+  .fixed-box{
+    bottom: 20%;
+    right: -1.3rem;
+  }
+  
+  .fixed-box > div:nth-of-type(1){
+    padding: 8px .2rem;
+    box-shadow: 0px 1px 27px 3px rgba(0, 0, 0, 0);
+    background: #1D2138;
+  }
+  
+  .check-more{
+    right: 0;
+  }
+  
+  .money-chose{
+    width: 100%;
+  }
+  
+  .roll-time-num span{
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    line-height: 30px;
+  }
+  
+  .roll-count{
+    position: unset;
+    padding-right: 0;
+    margin-top: 0;
+  }
+  
+  .roll-goods{
+    height: 1rem;
+  }
+  
+  .home-roll-left{
+    width: 95%;
+    margin: auto;
+  }
+  
+  .notice-positon{
+    margin-top: 160px;
+  }
+  
+  .pay-way{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 95%;
+    cursor: pointer;
+    margin: auto;
+  }
+  
+  .pay-way > div{
+    height: 50px;
+    width: 49%;
+    margin: .1rem 0;
+    overflow: hidden;
+  }
+  
+  .pay-way > div img{
+    width: 100%;
+  }
+  
+  .immeility-open{
+    padding-bottom: .3rem;
+    width: 100%;
+  }
+  
+  .default-charge{
+    width: 80%;
+    margin: .1rem auto
+  }
+  
+  .default-charge .form-box{
+    margin: .2rem auto 0;
+  }
+  
+  .online-pay-tips{
+    opacity: .8;
+  }
+  
+  .record-bg > p:nth-of-type(1){
+    margin-top: .2rem;
+  }
+  
+  .pay-way:after{
+    content: '';
+    width: 32%;
+    border: 1px solid transparent;
+  }
+  
+  .kf-modal{
+    right: 116%;
+  }
+  
+  .fetival-box div{
+    width: 2.5rem;
+    
+  }
+  
+  .active-charge > div{
+    width: 48%;
+    height: auto;
+    background-size: 100% 100%;
+  }
+  
+  .box-btn{
+    width: 100%;
+    margin: .3rem auto
+  }
+  
+  .phone-flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .pay-now{
+    width: 2.4rem;
+    border-radius: 4px;
+    margin-top: 0;
+    background: #FCC601;
+  }
+  
+  .time-line{
+    width: 95%;
+  }
+  
+  .fast-mode{
+    position: unset;
+  }
+  
+  .battle-number{
+    /*padding-bottom: 50px;*/
+  }
+  
+  .version-bg{
+    background: url("../image/verbgm.png") no-repeat top left / 100% 100%;
+  }
+  
+  .hash-icon{
+    top: 49%;
+    left: 2%;
+  }
+  
+  .battle-icon{
+    top: 63%;
+    left: 25%;
+  }
+  
+  .empty-icon{
+    top: 43%;
+    left: 25%;
+  }
+  
+  .emptys-icon{
+    top: 29%;
+    left: 9%;
+  }
+  
+  .account{
+    margin-top: 30px;
+  }
+  
+  .pro-icon{
+    top: 69%;
+    right: 12%;
+  }
+  
+  .skins-icon{
+    top: 59%;
+    right: 32%;
+  }
+  
+  .roll-count-box{
+    width: 100%;
+    margin: auto;
+  }
+  
+  .upgrade-icon{
+    top: 23%;
+    left: 54%;
+  }
+  
+  .task-icon{
+    top: 46%;
+    right: 8%;
+  }
+  
+  .container-bg{
+    background: url('../image/highLightBgm.png') no-repeat top left / 100% 100%;
+  }
+  
+  .active-pay{
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+  
+  .csgo-type-m li:nth-child(2n) .second_level{
+    left: auto;
+    right: 0;
+  }
+  
+  .box-shell{
+    width: 95%;
+    background-size: 100% 100%;
+    height: auto;
+  }
+  
+  .box-goods > div > div{
+    width: 2.5rem;
+  }
+  
+  .box-goods > div{
+    grid-template-columns:repeat(2, 1fr);
+  }
+  
+  .box-info-hash{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .content-router{
+    width: 100%;
+    margin: 0;
+  }
+  
+  .second_level{
+    width: 5rem;
+  }
+  
+  .progress-circle .ivu-chart-circle{
+    transform: scale(.54);
+  }
+  
+  .entertaining-animation-left{
+    transform: scale(.8);
+  }
+  
+  .entertaining-animation-right{
+    transform: scale(.8);
+    right: 2%
+  }
+  
+  .code-btn{
+    height: 34px;
+    line-height: 34px;
+  }
+  
+  .nav-router div{
+    margin-right: 5px;
+  }
+  
+  .hide-m{
+    display: none !important;
+  }
+  
+  .web-info-m{
+    width: 90%;
+    margin: 3rem auto 0;
+    display: flex;
+    justify-content: space-around;
+    transform: translateY(.5rem);
+  }
+  
+  .ivu-page-item:hover{
+    border: 1px solid #dcdee2;
+  }
+  
+  .ivu-page-item:hover a{
+    color: #515a6e;
+  }
+  
+  .ivu-page-item-active:hover{
+    border-color: #FBA929;
+  }
+  
+  .ivu-page-item-active:hover a{
+    color: #FBA929;
+  }
+  
+  html{
+    font-size: 60px;
+  }
+}
+
+/** iPad **/
+@media only screen and (min-width: 767px)  and (max-width: 1154px){
+  html{
+    font-size: 60px;
+  }
+  
+  .tradition-content > .grid-phone{
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .story-item{
+    width: 300px;
+  }
+  
+  #app{
+    min-width: 100%;
+  }
+  
+  .roll-box-left .det-room-box-m{
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 10px;
+  }
+  
+  .forgetPassword{
+    margin-top: 0;
+  }
+  
+  .share-popup{
+    width: 1.8rem;
+  }
+  
+  .share-popup:after{
+    left: 83%;
+  }
+  
+  .roll-item{
+    width: 48%;
+    margin: .36rem 0;
+  }
+  
+  .layout-festival{
+    width: 750px;
+  }
+  
+  .content-router{
+    margin: 0;
+  }
+  
+  .progress-circle .ivu-chart-circle{
+    transform: scale(.9);
+  }
+  
+  .modal-box-bg-box{
+    width: 78%;
+  }
+  
+  .luck-gun-img-m{
+    height: .8rem;
+  }
+  
+  .winning-box .luck-gun-img-m > .lucky-gun{
+    width: 20%;
+  }
+  
+  .menu-nav{
+    padding: 30px .2rem;
+  }
+  
+  .drop-del > div{
+    grid-template-columns: repeat(auto-fill, minmax(2.4rem, 1fr));
+  }
+  
+  .upgrade-del{
+    grid-template-columns: repeat(auto-fill, 30%);
+  }
+  
+  .home-title > img{
+    width: 30%;
+  }
+  
+  .search-box{
+    padding: 0;
+  }
+  
+  .promotion-code > span:nth-child(2){
+    width: 1.8rem;
+  }
+  
+  .nav-item{
+    width: 1.1rem;
+  }
+  
+  .pc-user-m{
+    margin-right: .2rem;
+  }
+  
+  .hide-ipad{
+    display: none !important;
+  }
+  
+  .menu-ctrl{
+    display: none;
+  }
+  
+  .menu-list-ctrl{
+    display: flex;
+  }
+  
+  .nav-router div{
+    margin-right: .1rem;
+  }
+  
+  .price-range{
+    margin: 0;
+    left: -.15rem;
+  }
+  
+  .select-box{
+    width: 98%;
+  }
+  
+  .sort-span1{
+    margin-left: .4rem;
+  }
+  
+  .hf-item1-r{
+    width: 6rem;
+    height: 5.15rem;
+    margin: -.3rem auto;
+  }
+  
+  .web-info-m{
+    width: 90%;
+    margin: 3rem auto 0;
+    display: flex;
+    justify-content: space-around;
+    transform: translateY(-.2rem);
+  }
+  
+  .ivu-page-item:hover{
+    border: 1px solid #dcdee2;
+  }
+  
+  .ivu-page-item:hover a{
+    color: #515a6e;
+  }
+  
+  .ivu-page-item-active:hover{
+    border-color: #FBA929;
+  }
+  
+  .ivu-page-item-active:hover a{
+    color: #FBA929;
+  }
+  
+  .arm-item, .arm-itemholder, .arm-lock{
+    width: 2.04rem;
+    /*height: 1.96rem;*/
+  }
+  
+  .little-prize{
+    top: 35%;
+  }
+  
+  .ivu-chart-circle-inner{
+    top: 45%;
+  }
+  
+  .home-footer-box{
+    flex-direction: column;
+    margin-top: 1rem;
+    padding: .5rem 0 1rem;
+  }
+  
+  .footer-left{
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .footer-box{
+    flex-direction: column;
+    bottom: .5rem;
+  }
+  
+  .store-type{
+    width: 2.41rem;
+    height: 1.4rem;
+  }
+  
+  .form-box{
+    margin: .5rem .65rem 0;
+  }
+  
+  .goods-box-bg{
+    width: 2rem;
+    height: 2rem;
+  }
+  
+  .item-btn{
+    width: 1.6rem;
+  }
+  
+  .foot-rights{
+    width: 60%;
+    margin-bottom: .2rem;
+  }
+  
+  .artical-item, .artical-item-holder{
+    width: 210px;
+  }
+  
+  .artical-content{
+    grid-template-columns: repeat(auto-fill, 210px);
+  }
+  
+  .arm-content{
+    width: 75%;
+    flex: 1;
+  }
+  
+  .sort-panel{
+    width: 2rem;
+  }
+  
+  .query-box-input{
+    width: 3rem;
+  }
+  
+  .ub-boxhis-th .ivu-col:first-child, .ub-boxhis-td .ivu-col:first-child{
+    padding-left: .03rem;
+  }
+  
+  .search-type-label-i{
+    margin: 0 .06rem .06rem;
+    display: inline-block;
+  }
+  
+  .roll-query{
+    margin-top: .33rem;
+    flex-wrap: wrap;
+  }
+  
+  .roll-query-status, .roll-query-other{
+    flex: auto;
+  }
+  
+  .roll-query-status > span{
+    font-size: .22rem;
+  }
+  
+  .roll-query-other{
+    margin-top: .3rem;
+  }
+  
+  .free-term{
+    flex-flow: column;
+  }
+  
+  .term1{
+    border-right: none;
+  }
+  
+  .term2{
+    padding: 0;
+    margin-top: .8rem;
+  }
+  
+}
+
+/*  ipad pro*/
+@media screen and (min-width: 1023px) and (max-width: 1154px){
+  html{
+    font-size: 60px;
+  }
+  
+  .story-item{
+    width: 280px;
+  }
+  
+  .content-router{
+    margin: 0;
+  }
+  
+  .layout-festival{
+    width: 900px;
+  }
+  
+  .modal-box-bg-box{
+    width: 78%;
+  }
+  
+  .pc-user-m{
+    margin-right: .2rem;
+  }
+  
+  .luck-gun-img-m{
+    height: .8rem;
+  }
+  
+  .winning-box .luck-gun-img-m > .lucky-gun{
+    width: 20%;
+  }
+  
+  .fair-item span{
+    width: 1.3rem;
+  }
+  
+  .progress-circle .ivu-chart-circle{
+    transform: scale(1.05);
+  }
+  
+  html{
+    font-size: 70px;
+  }
+  
+  .hide-ipad{
+    display: none !important;
+  }
+  
+  .ivu-page-item:hover{
+    border: 1px solid #dcdee2;
+  }
+  
+  .ivu-page-item:hover a{
+    color: #515a6e;
+  }
+  
+  .ivu-page-item-active:hover{
+    border-color: #FBA929;
+  }
+  
+  .ivu-page-item-active:hover a{
+    color: #FBA929;
+  }
+  
+  .probability{
+    font-size: .5rem !important;
+  }
+  
+  .ivu-scroll-container{
+    height: 6rem !important;
+    overflow-x: hidden;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px){
+  
+  .roll-caption{
+    padding: .1rem;
+  }
+  
+  .story-item{
+    width: 300px;
+  }
+  
+  .roll-main{
+    margin-top: 10.6rem;
+  }
+  
+  .recharge-now{
+    margin-left: 4rem;
+  }
+  
+  .level-bar{
+    width: 10rem;
+  }
+  
+  .grade-bar{
+    margin-top: .13rem;
+  }
+  
+  .logo-bg{
+    height: 52%;
+  }
+  
+  .douyu-activity-btn{
+    top: 39rem !important;
+  }
+  
+  .douyu-btn{
+    top: 10.4rem;
+    transform: translateX(-50%);
+  }
+  
+  .douyu-banre .luck-panel{
+    margin-top: 9.6rem;
+  }
+  
+  .upgrade-logo{
+    top: 1.05rem;
+  }
+  
+  .roll-lucky-item .ivu-avatar-large{
+    height: 41px;
+  }
+  
+  .turntable-grid{
+    transform: scale(.49) rotateZ(-112deg) translateX(50%);
+  }
+  
+  .progress{
+    transform: translateX(-50%) translateY(-6%) rotate(25.5deg) scale(0.46);
+  }
+  
+  .fairGame2{
+    margin-top: .34rem;
+  }
+  
+  .hash-value{
+    margin-top: 0 !important;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  
+  .horizontalLine{
+    margin: 0 .1rem;
+  }
+  
+  .successful-result .result-name{
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transform: translateY(362%);
+  }
+  
+  .probability{
+    font-size: .5rem !important;
+  }
+  
+  .skins-list{
+    grid-template-columns: repeat(auto-fill, 2rem);
+  }
+  
+  .upgrade-item{
+    width: 2rem !important;
+  }
+  
+  .ivu-scroll-container{
+    height: 6rem !important;
+    overflow-x: hidden;
+  }
+}
+
+/* 1200px */
+@media screen and (min-width: 1154px) and (max-width: 1550px){
+  html{
+    font-size: 66px;
+  }
+  
+  .story-item{
+    width: 300px;
+  }
+  
+  .skins-value .story-sk-price{
+    font-size: 13px;
+  }
+  
+  .layout-self{
+    width: 1150px;
+  }
+  
+  .home-box-img > span{
+    transform: skew(165deg) scale(.8);
+  }
+  
+  .nav-router div{
+    margin-right: .4rem;
+  }
+  
+  .roll-main{
+    margin-top: 14.14rem;
+  }
+  
+  .douyu-activity-btn{
+    top: 39rem !important;
+  }
+  
+  .douyu-btn{
+    top: 10.1rem;
+    transform: translateX(-50%);
+    width: 4.19rem;
+    height: 2.02rem;
+  }
+  
+  .hide-p{
+    display: none !important;
+  }
+  
+  .item-content{
+    /*height: 3.2rem;*/
+    overflow: hidden;
+  }
+  
+  .menu-list-ctrl{
+    display: flex;
+  }
+  
+  .menu-ctrl{
+    display: none;
+  }
+  
+  .artical-item{
+    width: 200px;
+    height: 220px;
+  }
+  
+  .artical-content{
+    grid-template-columns: repeat(auto-fill, 200px);
+  }
+  
+  .artical-item-holder{
+    width: 200px;
+    height: 220px;
+  }
+  
+  .pay-type-group{
+    max-width: 90%;
+  }
+  
+  .hf-item2-txt, .hf-item1-tit{
+    text-align: left;
+  }
+  
+  .ht-btn{
+    margin-left: -1.8rem;
+  }
+  
+  .hf-itme1{
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .arm-item, .arm-itemholder, .arm-lock{
+    width: 2.04rem;
+    /*height: 1.96rem;*/
+  }
+  
+  .ivu-chart-circle-inner{
+    top: 45%;
+  }
+  
+  /* .my-bag{
+      bottom:5%;
+  } */
+  .artical-span .boom-bg2{
+    width: 90%;
+  }
+  
+  .roll-query-status > span{
+    font-size: .2rem;
+  }
+  
+  .turntable-grid{
+    transform: scale(.79) rotateZ(-112deg) translateX(50%);
+  }
+  
+  .progress{
+    transform: translateX(-50%) translateY(-0.32rem) rotate(25.5deg) scale(0.73);
+  }
+  
+  .fairGame2{
+    margin-top: .16rem;
+  }
+  
+  .hash-value{
+    margin-top: 0 !important;
+  }
+  
+  .successful-result .result-name{
+    transform: translateY(500%);
+  }
+  
+  .ivu-scroll-container{
+    height: 6rem !important;
+    overflow-x: hidden;
+  }
+  
+  .formula{
+    line-height: .16rem !important;
+  }
+  
+  .decoration-lattice img{
+    width: 3.36rem;
+    margin-top: .46rem;
+  }
+  
+  .upgrade-logo{
+    top: 1.1rem;
+  }
+  
+  .douyu-banre .luck-panel{
+    margin-top: 9.6rem;
+  }
+}
+
+@media screen and  (min-width: 767px)   and (max-width: 1550px){
+  
+  .active-pay{
+    width: 60%;
+  }
+  
+  .home-box-img > span{
+    transform: skew(165deg) scale(.8);
+  }
+}
+
+/* 1920px */
+@media screen and (min-width: 1550px)  and (max-width: 1920px){
+  html{
+    font-size: 85px;
+  }
+  
+  .layout-self{
+    width: 1500px;
+  }
+  
+  .progress-circle .ivu-chart-circle{
+    transform: scale(1.3);
+  }
+  
+  .upgrade-center p{
+    font-size: .55rem;
+  }
+  
+  .hide-p{
+    display: none !important;
+  }
+  
+}
+
+@media screen and (min-width: 1921px){
+  html{
+    font-size: 85px;
+  }
+  
+  .lucky-hover{
+    margin: 0;
+  }
+  
+  .layout-self{
+    width: 1700px;
+  }
+  
+  .watch-more{
+    transform: scale(.6);
+  }
+  
+  .hide-p{
+    display: none !important;
+  }
+  
+  .bag-goods{
+    margin-top: .7rem;
+    border: 0px solid #030000;
+    display: grid;
+    justify-content: space-around;
+    grid-columns-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(2.6rem));
+    grid-row-gap: .2rem;
+  }
+  
+  .bag-goods > div{
+    /*width: 2.6rem;*/
+    cursor: pointer;
+  }
+  
+  .progress-circle .ivu-chart-circle{
+    transform: scale(1.3);
+  }
+  
+  .pay-way:after{
+    content: '';
+    width: 22%;
+    border: 1px solid transparent;
+  }
+  
+  .bag-tips > img{
+    height: 175%;
+  }
+  
+  .promotion-code > span:nth-child(2){
+    line-height: .3rem;
+  }
+  
+  .inventory-search p{
+    font-size: .14rem;
+    font-weight: bold;
+    line-height: 19px;
+    cursor: pointer;
+  }
+  
+  .inventory-search p i{
+    color: #FFFFFF;
+    font-weight: 400;
+  }
+  
+  .undata-position > p{
+    left: 13%;
+  }
+  
+  .roll-room-box{
+    min-height: 13rem;
+  }
+  
+  .prm-people-info{
+    min-height: 13rem;
+  }
+  
+  .item-drop{
+    min-height: 4rem;
+  }
+  
+  .room-info-box{
+    grid-template-columns:repeat(auto-fill, minmax(3.5rem, 1fr));
+  }
+  
+  .bag-tips p{
+    font-size: .15rem;
+  }
+}

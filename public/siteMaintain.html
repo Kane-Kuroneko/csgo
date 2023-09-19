@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="referrer" content="no-referrer"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>网站维护中-66hash</title>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        @media screen and (max-width: 767px) {
+            .box {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+
+        @media screen and (min-width: 767px) {
+            .box {
+                width: 100%;
+            }
+        }
+
+        .box {
+            width: 100%;
+            height: 100%;
+        }
+
+        .log {
+            position: relative;
+            height: 100vh;
+        }
+
+        .log img {
+            object-position: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .stop-tip {
+            color: #0A0A0A;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        .recovery-time {
+            color: #FFFFFF;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .tips-box {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        @media screen and (max-width: 767px) {
+            .recovery-time{
+                font-size: 15px;
+                text-align: center;
+            }
+            .tips-box{
+                width: 100%;
+                top: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="log">
+        <img src="./img/fixed.jpg" class="close-p" alt="66hash">
+        <img src="./img/fixedbg.jpg" class="close-m" alt="">
+        <div class="tips-box">
+            <p class="recovery-time" id="recovery-time-text"></p>
+        </div>
+    </div>
+</div>
+<script>
+    function close() {
+        if (document.body.clientWidth > 767) {
+            return document.querySelector('.close-m').style.display = 'none'
+        }
+        document.querySelector('.close-p').style.display = 'none'
+        // document.querySelector('.recovery-time').style.display = 'none'
+    }
+
+    close()
+
+    function GetQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        let recoveryTime = r[2].replace('%20', ' ')
+        if (r[2] === 'undefined') return
+        document.getElementById('recovery-time-text').innerText = `预计恢复时间: ${recoveryTime}`
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+
+    GetQueryString('timer')
+
+    function ajax() {
+        var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("microsoft.XMLHttp")
+        xhr.open("get", '/api/home/home', true);
+        xhr.send();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4) {
+                if (xhr.status == 200) {
+                    window.location.href = window.location.origin
+                } else {
+                    let res = JSON.parse(xhr.response)
+                }
+            }
+        }
+    }
+
+    ajax();
+    setInterval(ajax, 60 * 1000);
+</script>
+</body>
+</html>
+

@@ -1,0 +1,31 @@
+html[data-reaxel-reactive-device="mobile-non-full-screen"]{
+	/*登录弹窗*/
+	.iview-login-modal{
+		transform: scale(.75);
+		bottom: unset;
+		
+		.ivu-modal{
+			top: 0;
+		}
+	}
+	/*活动弹窗*/
+	.modal-box-bg-notice {
+		transform: scale(0.85);
+		position: absolute;
+		top: 5vw;
+	}
+	/*新人福利弹窗*/
+	.modal-bg{
+		z-index: 1000;
+		.modal-box{
+			&>img {    
+				top: -11vw;
+				right: -6vw;
+			}
+		}
+	}
+	.modal-bg.show .modal-box-bg{
+		transform-origin : unset;
+		transform: scale(.8);
+	}
+}

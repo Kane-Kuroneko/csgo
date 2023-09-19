@@ -1,0 +1,1036 @@
+{
+  "csgo": {
+    "category": [
+      {
+        "labelZH": "不限",
+        "labelEN": "N/A",
+        "labelRU": "N/A",
+        "labelVN": "Bất kỳ",
+        "value": "",
+        "text": "类型"
+      },
+      {
+        "labelZH": "手枪",
+        "labelEN": "Pistols",
+        "labelRU": "Пистолет",
+        "labelVN": "Súng lục",
+        "value": "Pistol"
+      },
+      {
+        "labelZH": "重型武器",
+        "labelEN": "Machine Gun",
+        "labelRU": "Пулемёт",
+        "labelVN": "Súng máy",
+        "value": "shotgun "
+      },
+      {
+        "labelZH": "微型冲锋枪",
+        "labelEN": "SMG",
+        "labelRU": "Пистолет-пулемёт",
+        "labelVN": "Súng tiểu liên",
+        "value": "smg"
+      },
+      {
+        "labelZH": "步枪",
+        "labelEN": "Rifles",
+        "labelRU": "Винтовка",
+        "labelVN": "Súng trường",
+        "value": "rifle"
+      },
+      {
+        "labelZH": "匕首",
+        "labelEN": "Knife",
+        "labelRU": "Нож",
+        "labelVN": "Dao",
+        "value": "knife"
+      },
+      {
+        "labelZH": "箱子",
+        "labelEN": "Case",
+        "labelRU": "Контейнер",
+        "labelVN": "Đồ chứa",
+        "value": "case"
+      },
+      {
+        "labelZH": "钥匙",
+        "labelEN": "Keys",
+        "labelRU": "Ключ",
+        "labelVN": "Chìa khóa",
+        "value": "key"
+      },
+      {
+        "labelZH": "印花",
+        "labelEN": "Stickers",
+        "labelRU": "Наклейка",
+        "labelVN": "Hình dán",
+        "value": "sticker"
+      },
+      {
+        "labelZH": "音乐盒",
+        "labelEN": "Music Kit",
+        "labelRU": "Набор музыки",
+        "labelVN": "Gói âm thanh",
+        "value": "musickit"
+      },
+      {
+        "labelZH": "胸章",
+        "labelEN": "Badge",
+        "labelRU": "знак",
+        "labelVN": "Huy hiệu",
+        "value": "collectible"
+      },
+      {
+        "labelZH": "涂鸦",
+        "labelEN": "Graffiti",
+        "labelRU": "Граффити",
+        "labelVN": "Graffiti",
+        "value": "spray"
+      },
+      {
+        "labelZH": "标签",
+        "labelEN": "Tag",
+        "labelRU": "Ярлык",
+        "labelVN": "Nhãn",
+        "value": "tag"
+      },
+      {
+        "labelZH": "手套",
+        "labelEN": "Gloves",
+        "labelRU": "Перчатки",
+        "labelVN": "Găng tay",
+        "value": "hands"
+      },
+      {
+        "labelZH": "工具",
+        "labelEN": "Tool",
+        "labelRU": "Инструмент",
+        "labelVN": "Dụng cụ",
+        "value": "tool"
+      },
+      {
+        "labelZH": "礼物",
+        "labelEN": "Gift",
+        "labelRU": "Инструмент",
+        "labelVN": "Dụng cụ",
+        "value": "gift"
+      },
+      {
+        "labelZH": "探员",
+        "labelEN": "Customplayer",
+        "labelRU": "Инструмент",
+        "labelVN": "Dụng cụ",
+        "value": "customplayer"
+      },
+      {
+        "labelZH": "布章",
+        "labelEN": "Patch",
+        "labelRU": "Инструмент",
+        "labelVN": "Dụng cụ",
+        "value": "patch"
+      }
+    ],
+    "exterior": [
+      {
+        "labelZH": "不限",
+        "labelEN": "N/A",
+        "labelRU": "N/A",
+        "labelVN": "Bất kỳ",
+        "value": "",
+        "text": "外观"
+      },
+      {
+        "labelZH": "崭新出厂",
+        "labelEN": "Factory New",
+        "labelRU": "Прямо с завода",
+        "labelVN": "FN-Mới cứng",
+        "value": "WearCategory0"
+      },
+      {
+        "labelZH": "略有磨损",
+        "labelEN": "Minimal Wear",
+        "labelRU": "Немного поношенное",
+        "labelVN": "MW-Trầy ít",
+        "value": "WearCategory1"
+      },
+      {
+        "labelZH": "久经沙场",
+        "labelEN": "Field-Tested",
+        "labelRU": "После полевых испытаний",
+        "labelVN": "FT-Qua thực chiến",
+        "value": "WearCategory2"
+      },
+      {
+        "labelZH": "破损不堪",
+        "labelEN": "Well-Worn",
+        "labelRU": "Поношенное",
+        "labelVN": "WW-Khá mòn",
+        "value": "WearCategory3"
+      },
+      {
+        "labelZH": "战痕累累",
+        "labelEN": "Battle-Scarred",
+        "labelRU": "Закаленное в боях",
+        "labelVN": "BS-Mòn qua thực chiến",
+        "value": "WearCategory4"
+      },
+      {
+        "labelZH": "无涂装",
+        "labelEN": "Not Painted",
+        "labelRU": "Не покрашено",
+        "labelVN": "Chưa sơn",
+        "value": "WearCategoryNA"
+      }
+    ],
+    "coolingtime": [
+      {
+        "labelZH": "不限",
+        "labelEN": "N/A",
+        "labelRU": "N/A",
+        "labelVN": "Bất kỳ",
+        "value": "",
+        "text": "冷却时间"
+      },
+      {
+        "labelZH": "无锁定时间",
+        "labelEN": "No Cooldown",
+        "labelRU": "No Cooldown",
+        "labelVN": "không có thời gian khóa",
+        "value": 0
+      },
+      {
+        "labelZH": "1天以内",
+        "labelEN": "Within 1 Day",
+        "labelRU": "Within 1 Day",
+        "labelVN": "Trong vòng 1 ngày",
+        "value": 1
+      },
+      {
+        "labelZH": "2天以内",
+        "labelEN": "Within 2 Days",
+        "labelRU": "Within 2 Days",
+        "labelVN": "Trong vòng 2 ngày",
+        "value": 2
+      },
+      {
+        "labelZH": "3天以内",
+        "labelEN": "Within 3 Days",
+        "labelRU": "Within 3 Days",
+        "labelVN": "Trong vòng 3 ngày",
+        "value": 3
+      },
+      {
+        "labelZH": "4天以内",
+        "labelEN": "Within 4 Days",
+        "labelRU": "Within 4 Days",
+        "labelVN": "Trong vòng 4 ngày",
+        "value": 4
+      },
+      {
+        "labelZH": "5天以内",
+        "labelEN": "Within 5 Days",
+        "labelRU": "Within 5 Days",
+        "labelVN": "Trong vòng 5 ngày",
+        "value": 5
+      },
+      {
+        "labelZH": "6天以内",
+        "labelEN": "Within 6 Days",
+        "labelRU": "Within 6 Days",
+        "labelVN": "Trong vòng 6 ngày",
+        "value": 6
+      },
+      {
+        "labelZH": "7天以内",
+        "labelEN": "Within 7 Days",
+        "labelRU": "Within 7 Days",
+        "labelVN": "Trong vòng 7 ngày",
+        "value": 7
+      },
+      {
+        "labelZH": "8天以内",
+        "labelEN": "Within 8 Days",
+        "labelRU": "Within 8 Days",
+        "labelVN": "Trong vòng 8 ngày",
+        "value": 8
+      }
+    ],
+    "hasSticker": [
+      {
+        "labelZH": "不限",
+        "labelEN": "N/A",
+        "labelRU": "N/A",
+        "labelVN": "Bất kỳ",
+        "value": "",
+        "text": "印花"
+      },
+      {
+        "labelZH": "无印花",
+        "labelEN": "No",
+        "labelRU": "No",
+        "labelVN": "Không tem",
+        "value": 0
+      },
+      {
+        "labelZH": "有印花",
+        "labelEN": "Yes",
+        "labelRU": "Yes",
+        "labelVN": "Có tem",
+        "value": 1
+      }
+    ],
+    "darkGold": [
+      {
+        "labelZH": "不限",
+        "labelEN": "N/A",
+        "labelRU": "N/A",
+        "labelVN": "Bất kỳ",
+        "value": "",
+        "text": "有无暗金"
+      },
+      {
+        "labelZH": "有暗金★",
+        "labelEN": "StatTrak™",
+        "labelRU": "StatTrak™",
+        "labelVN": "StatTrak™",
+        "value": 1
+      },
+      {
+        "labelZH": "无暗金",
+        "labelEN": "Normal",
+        "labelRU": "Normal",
+        "labelVN": "Bình thường",
+        "value": 0
+      }
+    ],
+    "gemstone": [
+      {
+        "labelZH": "不限",
+        "value": 0
+      },
+      {
+        "labelZH": "红宝石",
+        "value": 1
+      },
+      {
+        "labelZH": "蓝宝石",
+        "value": 2
+      },
+      {
+        "labelZH": "黑珍珠",
+        "value": 3
+      },
+      {
+        "labelZH": "绿宝石",
+        "value": 4
+      }
+    ],
+    "newCategory": [
+      {
+        "name": "全部",
+        "value": "",
+        "icon": "iconicon-all"
+      },
+      {
+        "name": "匕首",
+        "icon": "iconicon-bishou",
+        "value": "Knife",
+        "child": [
+          {
+            "name": "折叠刀",
+            "value": "折叠刀"
+          },
+          {
+            "name": "刺刀",
+            "value": "刺刀"
+          },
+          {
+            "name": "爪子刀",
+            "value": "爪子刀"
+          },
+          {
+            "name": "猎刀",
+            "value": "猎刀"
+          },
+          {
+            "name": "暗影双匕",
+            "value": "暗影双匕"
+          },
+          {
+            "name": "短剑",
+            "value": "短剑"
+          },
+          {
+            "name": "折刀",
+            "value": "折刀"
+          },
+          {
+            "name": "海豹短刀",
+            "value": "海豹短刀"
+          },
+          {
+            "name": "系绳匕首",
+            "value": "系绳匕首"
+          },
+          {
+            "name": "流浪者匕首",
+            "value": "流浪者匕首"
+          },
+          {
+            "name": "穿肠刀",
+            "value": "穿肠刀"
+          },
+          {
+            "name": "M9 刺刀",
+            "value": "M9 刺刀"
+          },
+          {
+            "name": "蝴蝶刀",
+            "value": "蝴蝶刀"
+          },
+          {
+            "name": "弯刀",
+            "value": "弯刀"
+          },
+          {
+            "name": "鲍伊猎刀",
+            "value": "鲍伊猎刀"
+          },
+          {
+            "name": "熊刀",
+            "value": "熊刀"
+          },
+          {
+            "name": "锯齿爪刀",
+            "value": "锯齿爪刀"
+          },
+          {
+            "name": "骷髅匕首",
+            "value": "骷髅匕首"
+          },
+          {
+            "name": "求生匕首",
+            "value": "求生匕首"
+          }
+        ]
+      },
+      {
+        "name": "手枪",
+        "icon": "iconicon-shouqiang",
+        "value": "Pistol",
+        "child": [
+          {
+            "name": "P2000",
+            "value": "P2000"
+          },
+          {
+            "name": "USP 消音版",
+            "value": "USP 消音版"
+          },
+          {
+            "name": "格洛克 18 型",
+            "value": "格洛克 18 型"
+          },
+          {
+            "name": "P250",
+            "value": "P250"
+          },
+          {
+            "name": "FN57",
+            "value": "FN57"
+          },
+          {
+            "name": "CZ75 自动手枪",
+            "value": "CZ75"
+          },
+          {
+            "name": "沙漠之鹰",
+            "value": "沙漠之鹰"
+          },
+          {
+            "name": "Tec-9",
+            "value": "Tec-9"
+          },
+          {
+            "name": "R8 左轮手枪",
+            "value": "R8 左轮手枪"
+          },
+          {
+            "name": "双持贝瑞塔",
+            "value": "双持贝瑞塔"
+          }
+        ]
+      },
+      {
+        "name": "步枪",
+        "icon": "iconicon-buqiang",
+        "value": "Rifle",
+        "child": [
+          {
+            "name": "法玛斯",
+            "value": "法玛斯"
+          },
+          {
+            "name": "加利尔 AR",
+            "value": "加利尔 AR"
+          },
+          {
+            "name": "M4A4",
+            "value": "M4A4"
+          },
+          {
+            "name": "M4A1 消音型",
+            "value": "M4A1 消音型"
+          },
+          {
+            "name": "AK-47",
+            "value": "AK-47"
+          },
+          {
+            "name": "AWP",
+            "value": "AWP"
+          },
+          {
+            "name": "AUG",
+            "value": "AUG"
+          },
+          {
+            "name": "SG 553",
+            "value": "SG 553"
+          },
+          {
+            "name": "SSG 08",
+            "value": "SSG 08"
+          },
+          {
+            "name": "SCAR-20",
+            "value": "SCAR-20"
+          },
+          {
+            "name": "G3SG1",
+            "value": "G3SG1"
+          }
+        ]
+      },
+      {
+        "name": "微型冲锋枪",
+        "icon": "iconicon-chongfengqiang",
+        "value": "Smg",
+        "child": [
+          {
+            "name": "MAC-10",
+            "value": "MAC-10"
+          },
+          {
+            "name": "MP9",
+            "value": "MP9"
+          },
+          {
+            "name": "MP7",
+            "value": "MP7"
+          },
+          {
+            "name": "UMP-45",
+            "value": "UMP-45"
+          },
+          {
+            "name": "PP-野牛",
+            "value": "PP-野牛"
+          },
+          {
+            "name": "P90",
+            "value": "P90"
+          },
+          {
+            "name": "MP5-SD",
+            "value": "MP5-SD"
+          }
+        ]
+      },
+      {
+        "name": "重型武器",
+        "icon": "iconicon-xiandanqiang",
+        "value": "Shotgun",
+        "child": [
+          {
+            "name": "新星",
+            "value": "新星"
+          },
+          {
+            "name": "XM1014",
+            "value": "XM1014"
+          },
+          {
+            "name": "MAG-7",
+            "value": "MAG-7"
+          },
+          {
+            "name": "截短霰弹枪",
+            "value": "截短霰弹枪"
+          },
+          {
+            "name": "M249",
+            "value": "M249"
+          },
+          {
+            "name": "内格夫",
+            "value": "内格夫"
+          }
+        ]
+      },
+      {
+        "name": "手套",
+        "icon": "iconicon-shoutao",
+        "value": "Hands",
+        "child": [
+          {
+            "name": "血猎手套",
+            "value": "血猎手套"
+          },
+          {
+            "name": "驾驶手套",
+            "value": "驾驶手套"
+          },
+          {
+            "name": "裹手",
+            "value": "裹手"
+          },
+          {
+            "name": "摩托手套",
+            "value": "摩托手套"
+          },
+          {
+            "name": "专业手套",
+            "value": "专业手套"
+          },
+          {
+            "name": "运动手套",
+            "value": "运动手套"
+          },
+          {
+            "name": "九头蛇手套",
+            "value": "九头蛇手套"
+          },
+          {
+            "name": "狂牙手套",
+            "value": "狂牙手套"
+          }
+        ]
+      },
+      {
+        "name": "其他",
+        "icon": "iconicon-qitawuqi",
+        "value": "Other",
+        "child": [
+          {
+            "name": "布章",
+            "value": "CSGO_Tool_Patch"
+          },
+          {
+            "name": "探员",
+            "value": "type_customplayer"
+          },
+          {
+            "name": "箱子",
+            "value": "CSGO_Type_WeaponCase"
+          },
+          {
+            "name": "印花",
+            "value": "CSGO_Tool_Sticker"
+          },
+          {
+            "name": "音乐盒",
+            "value": "CSGO_Type_MusicKit"
+          },
+          {
+            "name": "胸章",
+            "value": "CSGO_Type_Collectible"
+          },
+          {
+            "name": "涂鸦",
+            "value": "CSGO_Type_Spray"
+          },
+          {
+            "name": "标签",
+            "value": "CSGO_Tool_Name_TagTag"
+          },
+          {
+            "name": "工具",
+            "value": "CSGO_Type_Tool"
+          },
+          {
+            "name": "礼物",
+            "value": "CSGO_Tool_GiftTag"
+          }
+        ]
+      }
+    ],
+    "quality": [
+      {
+        "labelZH": "不限",
+        "labelEN": "N/A",
+        "labelRU": "N/A",
+        "labelVN": "Bất kỳ",
+        "value": "",
+        "color": ""
+      },
+      {
+        "labelZH": "卓越",
+        "labelEN": "N/A",
+        "labelRU": "N/A",
+        "labelVN": "Bất kỳ",
+        "value": "Rarity_Mythical_Character",
+        "color": "rgb(148,2,198)"
+      },
+      {
+        "labelZH": "军规级",
+        "labelEN": "N/A",
+        "labelRU": "N/A",
+        "labelVN": "Bất kỳ",
+        "value": "Rarity_Rare_Weapon",
+        "color": "rgb(36,64,202)"
+      },
+      {
+        "labelZH": "消费级",
+        "labelEN": "N/A",
+        "labelRU": "N/A",
+        "labelVN": "Bất kỳ",
+        "value": "Rarity_Common_Weapon",
+        "color": "rgb(124,128,161)"
+      },
+      {
+        "labelZH": "受限",
+        "labelEN": "N/A",
+        "labelRU": "N/A",
+        "labelVN": "Bất kỳ",
+        "value": "Rarity_Mythical_Weapon",
+        "color": "rgb(159,29,202)"
+      },
+      {
+        "labelZH": "高级",
+        "labelEN": "N/A",
+        "labelRU": "N/A",
+        "labelVN": "Bất kỳ",
+        "value": "Rarity_Rare",
+        "color": "rgb(36,64,202s)"
+      },
+      {
+        "labelZH": "隐秘",
+        "labelEN": "N/A",
+        "labelRU": "N/A",
+        "labelVN": "Bất kỳ",
+        "value": "Rarity_Ancient_Weapon",
+        "color": "rgb(207,74,74)"
+      },
+      {
+        "labelZH": "保密",
+        "labelEN": "N/A",
+        "labelRU": "N/A",
+        "labelVN": "Bất kỳ",
+        "value": "Rarity_Legendary_Weapon",
+        "color": "rgb(226,63,216)"
+      },
+      {
+        "labelZH": "非凡",
+        "labelEN": "N/A",
+        "labelRU": "N/A",
+        "labelVN": "Bất kỳ",
+        "value": "Rarity_Ancient",
+        "color": "rgb(207,74,74)"
+      },
+      {
+        "labelZH": "工业级",
+        "labelEN": "N/A",
+        "labelRU": "N/A",
+        "labelVN": "Bất kỳ",
+        "value": "Rarity_Uncommon_Weapon",
+        "color": "rbg(1,133,217)"
+      },
+      {
+        "labelZH": "奇异",
+        "labelEN": "N/A",
+        "labelRU": "N/A",
+        "labelVN": "Bất kỳ",
+        "value": "Rarity_Legendary",
+        "color": "#E23FD8"
+      },
+      {
+        "labelZH": "普通级",
+        "labelEN": "N/A",
+        "labelRU": "N/A",
+        "labelVN": "Bất kỳ",
+        "value": "Rarity_Common",
+        "color": "rgb(124,128,161)"
+      },
+      {
+        "labelZH": "违禁",
+        "labelEN": "N/A",
+        "labelRU": "N/A",
+        "labelVN": "Bất kỳ",
+        "value": "Rarity_Contraband",
+        "color": "#D38202"
+      }
+    ]
+  },
+  "dota": {
+    "category": [
+      {
+        "labelZH": "不限",
+        "labelEN": "N/A",
+        "labelRU": "N/A",
+        "labelVN": "Bất kỳ",
+        "value": "",
+        "text": "类型"
+      },
+      {
+        "labelZH": "力量",
+        "labelEN": "Strength",
+        "labelRU": "Strength",
+        "labelVN": "sức mạnh",
+        "value": 100
+      },
+      {
+        "labelZH": "敏捷",
+        "labelEN": "Agility",
+        "labelRU": "Agility",
+        "labelVN": "nhanh nhẹn",
+        "value": 101
+      },
+      {
+        "labelZH": "智力",
+        "labelEN": "Intelligence",
+        "labelRU": "Intelligence",
+        "labelVN": "trí tuệ",
+        "value": 102
+      },
+      {
+        "labelZH": "其他",
+        "labelEN": "Others",
+        "labelRU": "Others",
+        "labelVN": "các chỉ số khác",
+        "value": 103
+      }
+    ],
+    "quality": [
+      {
+        "labelZH": "不限",
+        "labelEN": "N/A",
+        "labelRU": "N/A",
+        "labelVN": "Bất kỳ",
+        "value": "",
+        "text": "品质",
+        "color": ""
+      },
+      {
+        "labelZH": "基础",
+        "labelEN": "base",
+        "labelRU": "Base",
+        "labelVN": "Base",
+        "value": "base",
+        "color": "#7C80A1"
+      },
+      {
+        "labelZH": "标准",
+        "labelEN": "unique",
+        "labelRU": "Unique",
+        "labelVN": "Unique",
+        "value": "unique",
+        "color": "#7C80A1"
+      },
+      {
+        "labelZH": "铭刻",
+        "labelEN": "strange",
+        "labelRU": "strange",
+        "labelVN": "strange",
+        "value": "strange",
+        "color": "#C95D30"
+      },
+      {
+        "labelZH": "纯正",
+        "labelEN": "genuine",
+        "labelRU": "genuine",
+        "labelVN": "genuine",
+        "value": "genuine",
+        "color": "#49855F"
+      },
+      {
+        "labelZH": "尊享",
+        "labelEN": "exalted",
+        "labelRU": "exalted",
+        "labelVN": "exalted",
+        "value": "exalted",
+        "color": "#7C80A1"
+      },
+      {
+        "labelZH": "英雄传世",
+        "labelEN": "tournament",
+        "labelRU": "tournament",
+        "labelVN": "tournament",
+        "value": "tournament",
+        "color": "#C69801"
+      },
+      {
+        "labelZH": "融合",
+        "labelEN": "infused",
+        "labelRU": "infused",
+        "labelVN": "infused",
+        "value": "infused",
+        "color": "#8136DD"
+      },
+      {
+        "labelZH": "吉祥",
+        "labelEN": "lucky",
+        "labelRU": "lucky",
+        "labelVN": "lucky",
+        "value": "lucky",
+        "color": "#CF4A4A"
+      },
+      {
+        "labelZH": "冥灵",
+        "labelEN": "corrupted",
+        "labelRU": "corrupted",
+        "labelVN": "corrupted",
+        "value": "corrupted",
+        "color": "#4C9900"
+      },
+      {
+        "labelZH": "亲笔签名",
+        "labelEN": "autographed",
+        "labelRU": "autographed",
+        "labelVN": "autographed",
+        "value": "autographed",
+        "color": "#4C9900"
+      },
+      {
+        "labelZH": "独特",
+        "labelEN": "unusual",
+        "labelRU": "unusual",
+        "labelVN": "unusual",
+        "value": "unusual",
+        "color": "#734797"
+      },
+      {
+        "labelZH": "凶煞",
+        "labelEN": "haunted",
+        "labelRU": "haunted",
+        "labelVN": "haunted",
+        "value": "haunted",
+        "color": "#734797"
+      },
+      {
+        "labelZH": "上古",
+        "labelEN": "vintage",
+        "labelRU": "vintage",
+        "labelVN": "vintage",
+        "value": "vintage",
+        "color": "#4971AB"
+      },
+      {
+        "labelZH": "冻人",
+        "labelEN": "frozen",
+        "labelRU": "frozen",
+        "labelVN": "frozen",
+        "value": "frozen",
+        "color": "#1D86D0"
+      },
+      {
+        "labelZH": "绝版",
+        "labelEN": "legacy",
+        "labelRU": "legacy",
+        "labelVN": "legacy",
+        "value": "legacy",
+        "color": "#999999"
+      },
+      {
+        "labelZH": "青睐",
+        "labelEN": "favored",
+        "labelRU": "favored",
+        "labelVN": "favored",
+        "value": "favored",
+        "color": "#C95D30"
+      },
+      {
+        "labelZH": "传奇",
+        "labelEN": "ascendant",
+        "labelRU": "ascendant",
+        "labelVN": "ascendant",
+        "value": "ascendant",
+        "color": "#CF4A4A"
+      }
+    ],
+    "rarity": [
+      {
+        "labelZH": "不限",
+        "labelEN": "N/A",
+        "labelRU": "N/A",
+        "labelVN": "Bất kỳ",
+        "value": "",
+        "text": "稀有度",
+        "color": ""
+      },
+      {
+        "labelZH": "普通",
+        "labelEN": "Common",
+        "labelRU": "Common",
+        "labelVN": "Phổ biến",
+        "value": "Rarity_Common",
+        "color": "#7C80A1"
+      },
+      {
+        "labelZH": "罕见",
+        "labelEN": "Rare",
+        "labelRU": "Rare",
+        "labelVN": "Lạ",
+        "value": "Rarity_Uncommon",
+        "color": "#6786A9"
+      },
+      {
+        "labelZH": "稀有",
+        "labelEN": "Uncommon",
+        "labelRU": "Uncommon",
+        "labelVN": "Hiếm",
+        "value": "Rarity_Rare",
+        "color": "#2440CA"
+      },
+      {
+        "labelZH": "神话",
+        "labelEN": "Mythical",
+        "labelRU": "Mythical",
+        "labelVN": "Kỳ bí",
+        "value": "Rarity_Mythical",
+        "color": "#9F1DCA"
+      },
+      {
+        "labelZH": "不朽",
+        "labelEN": "Immortal",
+        "labelRU": "Immortal",
+        "labelVN": "Bất diệt",
+        "value": "Rarity_Immortal",
+        "color": "#D38202"
+      },
+      {
+        "labelZH": "远古",
+        "labelEN": "Ancient",
+        "labelRU": "Ancient",
+        "labelVN": "Cổ đại",
+        "value": "Rarity_Ancient",
+        "color": "CF4A4A"
+      },
+      {
+        "labelZH": "传说",
+        "labelEN": "Legendary",
+        "labelRU": "Legendary",
+        "labelVN": "Huyền thoại",
+        "value": "Rarity_Legendary",
+        "color": "#E23FD8"
+      },
+      {
+        "labelZH": "至宝",
+        "labelEN": "Arcana",
+        "labelRU": "Arcana",
+        "labelVN": "Arcana",
+        "value": "Rarity_Arcana",
+        "color": "#4C9900"
+      }
+    ]
+  }
+}
