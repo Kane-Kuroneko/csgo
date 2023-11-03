@@ -6,7 +6,7 @@
                 <div class="help-center-left">
                     <ul>
                         <li @click="choseActive(el)" v-for="el in title" :key="el.key"
-                            :class="{'active': el.key === item.key || el.key == key}">{{ el.title }}
+                            :class="{'active':  el.key == key}">{{ el.title }}
                         </li>
                     </ul>
                 </div>
@@ -19,7 +19,7 @@
                 <div class="help-center-m" :class="{'active': show}">
                     <ul>
                         <li @click="choseActive(el)" v-for="el in title" :key="el.key"
-                            :class="{'active': el.key === item.key || el.key == key}"><span>·  {{ el.title }}</span>
+                            :class="{'active':  el.key == key}"><span>·  {{ el.title }}</span>
                             <Icon type="ios-arrow-forward"/>
                         </li>
                     </ul>
@@ -60,6 +60,13 @@
             '$route'() {
                 this.getTitle()
                 this.key = this.$route.params.key
+                debugger
+                if(this.key=='服务协议'||this.key=='隐私条款'){
+                    this.show = true
+                    this.item.title = this.key
+                    //this.key = el.key
+                }
+                document.documentElement.scrollTop=0
                 this.getContent(this.key)
             }
         },

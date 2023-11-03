@@ -28,17 +28,17 @@
 		<p>温馨提示：适度娱乐 切勿沉迷 注意账号保护 谨防上当受骗</p>
 		<p>杭州皎展网络科技有限公司 | ICP备案号：浙ICP备2023002015号</p>
 		<p
-			@click="$router.push('/page/helpcenter/activity')"
+			
 		>
-			<span>关于我们</span>
+			<span @click="toHelpCenter('公司介绍')">关于我们</span>
 			/
-			<span>常见问题</span>
+			<span @click="toHelpCenter('其他流程问题')">常见问题</span>
 			/
-			<span>使用条款</span>
+			<span @click="toHelpCenter('服务协议')">使用条款</span>
 			/
-			<span>隐私政策</span>
+			<span @click="toHelpCenter('隐私条款')">隐私政策</span>
 			/
-			<span>纠纷处理引导</span>
+			<span @click="toHelpCenter('纠纷处理说明')">纠纷处理引导</span>
 		</p>
 	</div>
 </template>
@@ -58,6 +58,12 @@ export default reaxper({
 			imgSecond,
 			imgThird,
 		};
+	},
+	methods:{
+		toHelpCenter(val){
+			this.$router.push('/page/helpcenter/'+val)
+			document.documentElement.scrollTop=0
+		},
 	},
 });
 

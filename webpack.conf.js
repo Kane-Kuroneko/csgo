@@ -1,6 +1,16 @@
+/*
+ * @Description: 
+ * @Version: 2.0
+ * @Autor: cjw
+ * @Date: 2023-11-03 15:08:59
+ * @LastEditors: cjw
+ * @LastEditTime: 2023-11-03 15:41:45
+ */
 
 const { ProvidePlugin} = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+
+const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 const path = require('path');
 module.exports = {
 	
@@ -27,6 +37,8 @@ module.exports = {
 			orzPending: ['reaxes-toolkit','orzPending'],
 			requester : ['@/requester/index.js','requester']
 		}),
+		//清除dist
+		new CleanWebpackPlugin()	
 	],
 }
 
