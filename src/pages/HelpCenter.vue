@@ -60,7 +60,7 @@
             '$route'() {
                 this.getTitle()
                 this.key = this.$route.params.key
-                debugger
+                
                 if(this.key=='服务协议'||this.key=='隐私条款'){
                     this.show = true
                     this.item.title = this.key
