@@ -1,27 +1,20 @@
 <template>
 	<div class = "main-header-container">
-		<HeaderLogoLogin/>
-		<HeaderMainTabs/>
+		<HeaderLogoLogin></HeaderLogoLogin>
+		<HeaderMainTabs></HeaderMainTabs>
 	</div>
 </template>
 
 <script>
+import HeaderDropPreciousSwiper from "@/views/New.Header/Header-DropPrecious-Swiper.vue";
 import HeaderLogoLogin from './Header-Logo-Login.vue';
 import HeaderMainTabs from './Header-MainTabs.vue';
-import HeaderMyPreciousSwiper from './Header-DropPrecious-Swiper.vue';
 export default reaxper({
-	status(){
-		return {
-			
-		}
-	},
 	components : {
+		HeaderDropPreciousSwiper,
 		HeaderLogoLogin ,
 		HeaderMainTabs,
-		HeaderMyPreciousSwiper,
 	},
-
-
 });
 </script>
 

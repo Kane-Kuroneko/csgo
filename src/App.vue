@@ -4,16 +4,19 @@
 		class = "container"
 		@click = "closeKfFunc"
 	>
-		<NewWapHeader v-if="isPhone" />
-		<NewHeader v-else />
+		<NewWapHeader v-if = "isPhone"></NewWapHeader>
+		<NewHeader v-if="!isPhone"></NewHeader>
 		
-		<HeaderDropPreciousSwiper />
-		<div class = "content-router" :style="{overflow: isPhone ? 'hidden' : 'unset' }">
-			<router-view class = "main-back" />
+		<HeaderDropPreciousSwiper></HeaderDropPreciousSwiper>
+		<div
+			class = "content-router"
+			:style = "{ overflow: isPhone ? 'hidden' : 'unset' }"
+		>
+			<router-view class = "main-back" ></router-view>
 		</div>
 		
-		<NewWapFooter v-if="isPhone"/>
-		<NewFooter v-else />
+		<NewWapFooter v-if = "isPhone" ></NewWapFooter>
+		<NewFooter v-else ></NewFooter>
 		<!--		<Footer class = "hide-rrweb"></Footer>-->
 		<!-- 公告-->
 		<aside
@@ -24,7 +27,7 @@
 			<img
 				src = "./assets/image/more.png"
 				alt = ""
-			/>
+			>
 		</aside>
 		<aside
 			class = "fixed-box hide-rrweb"
@@ -179,11 +182,12 @@
 			class = "hide-rrweb"
 			ref = "EchartLine"
 		></EchartLine>
-		<LoginModal/>
+		<LoginModal></LoginModal>
 	</div>
 </template>
 
 <script>
+import Test from "@/views/New.Header/Test.vue";
 import NewFooter from "./views/New.Footer";
 import Header from "./views/Header";
 import NewHeader from "./views/New.Header/index.vue";
@@ -192,41 +196,36 @@ import Notice from "./components/New.Notice";
 import InviteModal from "@/components/Battle/InviteModal";
 import EchartLine from "./components/NewYear/Module/EchartLine";
 import RedPack from "./components/YearFestival/RedPack";
-import {
-	mapActions ,
-	mapMutations ,
-	mapState,
-} from "vuex";
-import Test from "./Test.vue";
+import { mapActions , mapMutations , mapState } from "vuex";
 import { postAction } from "./api/manage";
 import { countDown } from "./utils/utils";
 import { createSocket } from "./utils/websocket";
 import MainBlock from "@/views/New.MainBlock/index.vue";
-import LoginModal from "@/views/New.Login.Modal"
+import LoginModal from "@/views/New.Login.Modal";
 import HeaderDropPreciousSwiper from "@/views/New.Header/Header-DropPrecious-Swiper.vue";
 import { reaxel_user } from "@/reaxels/user";
 import { reaxel_initial } from "@/reaxels/initial";
-import NewWapHeader from './views/New.Wap.Header';
-import NewWapFooter from './views/New.Wap.Footer';
+import NewWapHeader from "./views/New.Wap.Header";
+import NewWapFooter from "./views/New.Wap.Footer";
+
 const queryString = require("query-string");
 const reax_user = reaxel_user();
 const reax_Initial = reaxel_initial();
 
 export default reaxper({
 	status () {
-		const { initialStore } = reax_Initial,{
-			isPhone,
-		} = initialStore;
+		const { initialStore } = reax_Initial , { isPhone } = initialStore;
 		return {
 			reax_Initial ,
 			initialStore ,
-			isPhone,
+			isPhone ,
 		};
 	} ,
 	components : {
-    LoginModal,
-		NewWapFooter,
-		NewWapHeader,
+		Test,
+		LoginModal ,
+		NewWapFooter ,
+		NewWapHeader ,
 		NewHeader ,
 		MainBlock ,
 		Footer ,
@@ -268,7 +267,7 @@ export default reaxper({
 		};
 	} ,
 	watch : {
-		$route () {
+		"$route" () {
 			//steam login
 			if ( queryString.parse(window.location.search)["openid.op_endpoint"] === "https://steamcommunity.com/openid/login" ) {
 				const query = queryString.parse(window.location.search);
@@ -292,9 +291,9 @@ export default reaxper({
 				} , 1000);
 			}
 		} ,
-		user (nv) {
+		"user" (nv) {
 			if ( nv.id ) {
-				createSocket(process.env.VUE_APP_LINK_WS + `/wss/drop/${ this.userId }` , "drop" );
+				createSocket(process.env.VUE_APP_LINK_WS + `/wss/drop/${ this.userId }` , "drop");
 			}
 			// 未登录
 			if ( JSON.stringify(nv) === "{}" ) {
@@ -363,28 +362,13 @@ export default reaxper({
 		}
 	} ,
 	computed : {
-		...mapState(
-			"account" ,
-			[
-				"token" ,
-				"bagNum" ,
-				"user",
-			],
-		) ,
+		...mapState("account" , ["token" , "bagNum" , "user"]) ,
 		userId () {
 			return this.user.id;
 		} ,
 	} ,
 	methods : {
-		...mapActions(
-			"account" ,
-			[
-				"getUser" ,
-				"getInfo" ,
-				"getDiscount",
-			],
-		) ,
-		...mapMutations("account" , ["clearUser"]) ,
+		...mapActions("account" , ["getUser" , "getInfo" , "getDiscount"]) , ...mapMutations("account" , ["clearUser"]) ,
 		showLine () {
 			this.$refs.EchartLine.show = true;
 		} ,
@@ -429,7 +413,7 @@ export default reaxper({
 		} ,
 		steamFunc (type , query) {
 			let url = type === "0" ? "/api/user/steam/login" : "/api/user/steam/bind";
-			postAction(url , query).then((res) => {
+			postAction(url , query).then(res => {
 				if ( type === "0" ) {
 					// 触发获取用户信息事件
 					if ( !res.data.token ) {
@@ -442,7 +426,7 @@ export default reaxper({
 					this.$Message.success("绑定成功");
 				}
 				this.getUser();
-			}).catch((err) => {
+			}).catch(err => {
 				this.$Message.error(err.response.data.errMsg);
 				// window.location.href = window.location.origin
 			});

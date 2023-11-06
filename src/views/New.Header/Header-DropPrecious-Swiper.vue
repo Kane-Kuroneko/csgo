@@ -1,9 +1,7 @@
 <template>
-	<div 
-		class = "drop-precious-container"
-	>
+	<div  class = "drop-precious-container" >
 		<div
-			v-if="baseInfo && !isPhone"
+			v-if="baseInfo"
 			class = "online-users"
 		>
 			<span>开箱展示</span>
@@ -21,8 +19,8 @@
 					v-if = "dropPreciousData.length > 0"
 				>
 					<swiper-slide
-						v-for = "(el, idx) in dropPreciousData"
-						:key = "idx"
+						v-for = "el in dropPreciousData"
+						:key = "el.id"
 						class = "luck-width"
 					>
 						<div
@@ -43,62 +41,12 @@
 							<span>{{ el.stuffName.split("|")[1] }}</span>
 						</div>
 						<div
-							v-if="false"
-							class = "winning-box"
-							:class = "'luck-' + conversionStyle(el.rarity, el.category)"
+							class="precious-box-sel"
 						>
-							<p class = "luck-name">{{ el.userName }}</p>
-							<div class = "lucky-name hide-m">
-								<!-- <p>{{'$ ' + el.price}}</p>-->
-								<div>
-									<p>{{ el.stuffName.split("|")[0] }}</p>
-									<p>{{ el.stuffName.split("|")[1] }}</p>
-								</div>
-							</div>
-							<div
-								class = "luck-gun-img"
-								align = "center"
-							>
-								<img
-									class = "lucky-gun"
-									:src = "imgHost(el.stuffImage)"
-								/>
-							</div>
-							<div class = "success-rate">
-								<div v-show = "el.successRate">
-									<img
-										v-if = "el.successRate,false"
-										:src = "imgUpicon"
-										alt = ""
-										style = "width: 10%; margin-left: 5px"
-									/>
-									{{ (+ el.successRate).toFixed(3) }}
-								</div>
-								<div v-show = "el.type == 1">
-									<img
-										v-if = "false"
-										src = "../assets/image/vsicon.png"
-										alt = ""
-										style = "width: 10%"
-									/>
-								</div>
-							</div>
-							<div class = "luck-user-info">
-								<div
-									align = "center"
-									class = "luck-portait"
-								>
-									<SkinsAvatar
-										wd = "40px"
-										ht = "40px"
-										:img = "el.avatar"
-										:head-frame = "el.headPortraitBox"
-									>
-									</SkinsAvatar>
-								</div>
-								<p>{{ el.userName }}</p>
-							</div>
+							<img class="user-avatar" :src="imgHost(el.avatar)" width="50" height="50">
+							<span>{{ el.userName }}</span>
 						</div>
+						
 					</swiper-slide>
 				</swiper>
 			</div>
@@ -126,6 +74,7 @@ export default reaxper({
 	} ,
 	data () {
 		return {
+			see:null,
 			imgUpicon ,
 			imgLevel,
 			colorMapping:{
@@ -205,6 +154,21 @@ import imgPreciousBgWhite from './img_5.png';
 	lang = "less"
 >
 
+.luck-width{
+	&:hover{
+		
+		.precious-box{
+			display: none;
+		}
+		.precious-box-sel{
+			display: flex !important;
+		}
+	}
+	.precious-box-sel{
+		display: none;
+	}
+}
+
 /deep/.swiper-wrapper{
 	row-gap: 4px;
 }
@@ -234,7 +198,7 @@ import imgPreciousBgWhite from './img_5.png';
 		& > span:first-child {
 			color: #dcae64;
 			font-size: 16px;
-			
+			white-space: nowrap;
 		}
 		
 		& > span:last-child {
@@ -289,6 +253,19 @@ import imgPreciousBgWhite from './img_5.png';
 			color: rgba(255,255,255,.4);
 			font-size: 10px;
 			margin-bottom: 6px;
+		}
+	}
+	
+	.precious-box-sel{
+		width: 116px;
+		height: 116px;
+		flex-flow: column nowrap;
+		justify-content: center;
+		align-items: center;
+		
+		img.user-avatar{
+			border-radius: 50%;
+			margin-bottom: 16px;
 		}
 	}
 }

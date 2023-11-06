@@ -55,7 +55,7 @@ export const reaxel_initial = reaxel((ret) => {
 		
 		return requester.get(`/api/home/web/info`).then(( data ) => {
 			setState({
-				dropPreciousData : data.boxLuckyVOList,
+				dropPreciousData : data.boxLuckyVOList.map(item => _.assign(item,{id:Math.random().toString()})),
 				baseInfo : data.basicsDataVO ,
 			});
 			return data;
