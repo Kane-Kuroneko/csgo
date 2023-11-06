@@ -100,6 +100,7 @@
 									@click = "
 										e => {
 											e.preventDefault();
+											closeLoginModal()
 											$router.push('/page/helpcenter/服务协议');
 										}
 									"
@@ -156,6 +157,7 @@
 									@click = "
 										e => {
 											e.preventDefault();
+											closeLoginModal()
 											$router.push('/page/helpcenter/服务协议');
 										}
 									"
@@ -167,7 +169,8 @@
 									@click = "
 										e => {
 											e.preventDefault();
-											$router.push('/page/helpcenter/隐私政策');
+											closeLoginModal()
+											$router.push('/page/helpcenter/隐私条款');
 										}
 									"
 									class = "agreement-entry"
