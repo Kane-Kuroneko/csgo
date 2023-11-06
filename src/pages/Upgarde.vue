@@ -75,9 +75,9 @@
 										</div>
 									</div>
 									<div class = "upgrade-box-music">
-										<div @click = "isMusic = !isMusic">
+										<div @click = "toggleMute()">
 											<div
-												:class = "{ 'mute-line': isMusic !== true }"
+												:class = "{ 'mute-line': mute }"
 											></div>
 											<i class = "iconfont iconicon-sound"></i>
 										</div>
@@ -625,9 +625,9 @@
 										</div>
 									</div>
 									<div class = "upgrade-box-music upgrade-box-m">
-										<div @click = "isMusic = !isMusic">
+										<div @click = "toggleMute()">
 											<div
-												:class = "{ 'mute-line': isMusic !== true }"
+												:class = "{ 'mute-line': mute }"
 											></div>
 											<i class = "iconfont iconicon-sound"></i>
 										</div>
@@ -1392,8 +1392,17 @@ import {
 	strFromU8,
 } from "fflate";
 import {HrTitle} from '@/New.Components'
+import { reaxel_Audio } from '@/reaxels/initial/audio';
+import { ReaxlassAudio } from '@/utils/Audio';
 
-export default {
+const reax_Audio = reaxel_Audio() , { toggleMute } = reax_Audio;
+export default reaxper({
+	status(){
+		const { mute } = reaxel_Audio();
+		return {
+			mute,
+		}
+	},
 	name : "upgrade" ,
 	components : {
 		Empty ,
@@ -1437,7 +1446,6 @@ export default {
 			result : {
 				result : true ,
 			} ,
-			isMusic : true ,
 			loadMall : false ,
 			translateCorner : 0 ,
 			loopAnimation : null ,
@@ -1549,6 +1557,7 @@ export default {
 		} ,
 	} ,
 	methods : {
+		toggleMute,
 		...mapActions("account" , ["getUser"]) ,
 		startRecord () {
 			if ( !this.isRecord ) return;
@@ -1558,7 +1567,7 @@ export default {
 			let option = {
 				emit (event , isCheckout) {
 					// if (event.type === 2) event = that.handleRrwebEventnCss(event)
-					console.log(event);
+					// console.log(event);
 					that.recordRules.sleepTime = 60000 * 3;
 					that.overPassEvent.push(JSON.parse(JSON.stringify(event)));
 					let deferTime;
@@ -1930,29 +1939,25 @@ export default {
 			}
 		} ,
 		upgradeAfter (parmas) {
-			let audio1 = new Audio() ,
-				audio2 = new Audio();
-			audio1.src = duringTheUpgrade2;
-			audio2.src = duringTheUpgrade7;
-			if ( this.isMusic ) {
-				this.isAnimation ? audio1.play() : audio2.play();
-			}
+			const {
+				duringTheUpgrade2 ,
+				duringTheUpgrade7,
+			} = reaxel_Audio().audios;
+			this.isAnimation ? duringTheUpgrade2.play() : duringTheUpgrade7.play();
 			let startTime = new Date().getTime();
 			postAction("/api/upgrade/upgrade" , parmas).then((res) => {
 				this.animationControl(res.data , new Date().getTime() - startTime ).then(() => {
 					this.getUser();
-					audio1.pause();
-					audio2.pause();
+					duringTheUpgrade2.stop();
+					duringTheUpgrade7.stop();
 					this.result = res.data;
-					let audio = new Audio();
 					// 额外掉落
 					if ( this.$socketData["drop"] ) {
 						this.$drop(this.$socketData["drop"].boxSkinsList);
 						this.$socketData["drop"] = undefined;
 					}
 					if ( res.data.result ) {
-						audio.src = updateSuccessed;
-						audio.play();
+						new ReaxlassAudio(updateSuccessed).play();
 						this.$refs.resultPup.show = true;
 						this.resultPup = {
 							result : this.desiredItem ,
@@ -1966,8 +1971,7 @@ export default {
 						} , 1000);
 						this.resetUpgradeUi();
 					} else {
-						audio.src = upgradeUnsuccessful;
-						audio.play();
+						new ReaxlassAudio(upgradeUnsuccessful).play();
 						this.storageSkins(false , res.data.id);
 						setTimeout(() => {
 							this.stopFn();
@@ -1995,16 +1999,11 @@ export default {
 		animationControl (result , time) {
 			return new Promise((resolve) => {
 				this.setPointerPosition(time , JSON.parse(result.upgradeResult).number ).then(() => {
-					if ( this.isMusic ) {
-						if ( result.result ) {
-							let audio = new Audio();
-							audio.src = updateSuccessed;
-							audio.play();
-						} else {
-							let audio = new Audio();
-							audio.src = upgradeUnsuccessful;
-							audio.play();
-						}
+					if ( result.result ) {
+						reaxel_Audio().audios;
+						new ReaxlassAudio(updateSuccessed).play();
+					} else {
+						new ReaxlassAudio(upgradeUnsuccessful).play();
 					}
 					if ( !result.result ) {
 						setTimeout(() => {
@@ -2065,7 +2064,7 @@ export default {
 			return start + "% -" + end;
 		} ,
 	} ,
-};
+});
 </script>
 
 <style scoped>

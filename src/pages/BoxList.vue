@@ -308,6 +308,7 @@ import {HrTitle} from '@/New.Components';
 import imgTitleHash from './BoxList.asset/img.png';
 import imgTitleClassic from './BoxList.asset/img_1.png';
 import { reaxel_initial } from '@/reaxels/initial';
+import { reaxel_Audio } from '@/reaxels/initial/audio';
 
 export default reaxper({
 	status(){
@@ -406,8 +407,7 @@ export default reaxper({
 			}
 		} ,
 		goBox (el) {
-			const audio = document.getElementById("goBoxAudio");
-			if ( audio ) audio.play();
+			reaxel_Audio().audios.goBox.play();
 			localStorage.setItem("box" , JSON.stringify(el));
 			this.$router.push("/steer/case");
 		} ,

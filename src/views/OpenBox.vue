@@ -422,20 +422,22 @@ import imgOpenBoxBg from './OpenBox.assets/img_3.png'
 import imgChangeSeed from './OpenBox.assets/img_4.png';
 import imgOpenRowBg from './OpenBox.assets/img_5.png';
 import imgPointer from './OpenBox.assets/img_6.png'
-
+import { reaxel_Audio } from '@/reaxels/initial/audio';
+import { reaxel_initial } from '@/reaxels/initial';
 const prizePoolCount = 80;
 const minIndex = 50;
 const maxIndex = 60;
 const slice3 = require("../assets/audio/slice3.wav");
 
 
-import { reaxel_initial } from '@/reaxels/initial';
 
+const reax_Audio = reaxel_Audio() , { toggleMute } = reax_Audio;
 export default reaxper({
-	name : "openBox" ,
 	status(){
 		const { isPhone } = reaxel_initial().initialStore;
+		const { mute } = reaxel_Audio();
 		return {
+			mute,
 			isPhone,
 		}
 	},
@@ -443,6 +445,7 @@ export default reaxper({
 		HashModule ,
 		TimeCount,
 	} ,
+	name : "openBox" ,
 	data () {
 		return {
 			imgPointer,
@@ -546,6 +549,7 @@ export default reaxper({
 	} ,
 	
 	methods : {
+		toggleMute,
 		...mapActions("account" , [
 			"getUser" ,
 			"getDiscount",
@@ -581,7 +585,7 @@ export default reaxper({
 					this.isHsahBox = false;
 				}
 				this.isOpen = false;
-				if ( this.$parent.closeVoice ) this.$refs.openBox.play();
+				reaxel_Audio().audios.open.play();
 				await this.$nextTick();
 				await setTimeout(() => {
 					this.openBoxData.forEach((openBox , index) => {
@@ -617,7 +621,7 @@ export default reaxper({
 						} , 1000);
 					});
 				} , 100);
-				if ( this.$parent.closeVoice ) this.music();
+				this.music();
 				let awaitResult = null;
 				let maxOpenTime = 0;
 				this.openBoxData.forEach((item) => {
@@ -681,8 +685,9 @@ export default reaxper({
 			}
 			postAction(this.url.sale , params).then((res) => {
 				if ( msg ) this.$Message.success("出售成功");
-				if ( type === "all" && this.$parent.closeVoice ) {
-					this.$refs.audioPrize.play();
+				if ( type === "all" ) {
+					// this.$refs.audioPrize.play();
+					reaxel_Audio().audios.prize.play();
 				}
 				this.show = false;
 				this.getUser();
@@ -808,7 +813,8 @@ export default reaxper({
 			}
 			for ( const key in this.openBoxData ) {
 				if ( this.openBoxData[key].prize.price > this.$parent.box.price ) {
-					if ( this.$parent.closeVoice ) this.$refs.audioPrizeB.play();
+					// this.$refs.audioPrizeB.play();
+					reaxel_Audio().audios.prizeB.play();
 					break;
 				}
 			}
@@ -842,9 +848,8 @@ export default reaxper({
 					let val = parseInt(this.$refs.pool[maxOpenTimeIndex].scrollWidth / 170 );
 					if ( val !== lastTime ) {
 						lastTime = val;
-						let audio = new Audio();
-						audio.src = slice3;
-						audio.play();
+						// reaxel_Audio().audios.slice.play();
+						new ReaxlassAudio(slice3).play();
 					}
 				}
 				catch ( e ) {
@@ -927,6 +932,8 @@ export default reaxper({
 		} ,
 	} ,
 });
+
+import { ReaxlassAudio } from '@/utils/Audio';
 </script>
 
 <style

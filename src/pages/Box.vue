@@ -130,11 +130,11 @@
 							</div>
 							<!--                    开关音乐特性-->
 							<div
-								@click="closeVoice = !closeVoice"
+								@click="toggleMute()"
 								class="open-box-music"
 							>
 								<div>
-									<img width="41" :src="closeVoice? imgMute : imgUnmute">
+									<img width="41" :src="mute ? imgMute : imgUnmute">
 								</div>
 							</div>
 							<div class="fairGame" v-if="box.boxType == 1">
@@ -607,9 +607,16 @@ import imgMute from './Box.assets/mute.svg';
 import imgUnmute from './Box.assets/unmute.svg';
 import imgPreciousInBox from './Box.assets/img.png';
 import imgFariGame from './Box.assets/img_1.png';
-
+import { reaxel_Audio } from '@/reaxels/initial/audio';
 const reax_User = reaxel_user();
+const { toggleMute } = reaxel_Audio();
 export default reaxper({
+	status(){
+		const { mute } = reaxel_Audio();
+		return {
+			mute,
+		}
+	},
 	components: {
 		HashModule,
 		OpenBox,
@@ -641,7 +648,6 @@ export default reaxper({
 			maxOpenBox: 5, // 最大开箱数
 			ballChart: null,
 			circleChart: null,
-			closeVoice: true,
 			page: 1,
 			count: 10,
 			process: 0,
@@ -688,6 +694,7 @@ export default reaxper({
 		this.getBoxStuff();
 	},
 	methods: {
+		toggleMute,
 		...mapActions("account", ["getUser"]),
 		...mapMutations("account", ["updateBagNum"]),
 		openOfficial() {

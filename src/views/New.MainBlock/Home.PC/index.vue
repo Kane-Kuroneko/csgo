@@ -106,8 +106,7 @@ export default reaxper({
 	},
 	methods : {
 		setCurrentBox(item){
-			const audio = document.getElementById("goBoxAudio");
-			if ( audio ) audio.play();
+			reaxel_Audio().audios.goBox.play();
 			localStorage.setItem("box" , JSON.stringify(item));
 			reax_Box.setCurrentBox(item);
 			this.$router.push('/steer/case')
@@ -116,6 +115,8 @@ export default reaxper({
 	
 });
 
+import audio_goBox from '@/assets/audio/goBoxAudio.aac';
+import { reaxel_Audio } from '@/reaxels/initial/audio';
 import { reaxel_box } from '@/reaxels/box';
 import { reaxel_initial } from '@/reaxels/initial';
 import imgHomePromotionBanner from '@/views/New.MainBlock/Home.PC/img.png';
