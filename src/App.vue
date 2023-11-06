@@ -29,143 +29,7 @@
 				alt = ""
 			>
 		</aside>
-		<aside
-			class = "fixed-box hide-rrweb"
-			:class = "{ 'check-more': !viewMore }"
-		>
-			<div>
-				<div
-					class = "my-bag-item"
-					style = "height: max-content; padding-bottom: 4px"
-				>
-					<div @click = "scrollTop">
-						<p style = "line-height: 5px">
-							<Icon
-								type = "md-arrow-dropup"
-								color = "#fff"
-								size = "16"
-							/>
-						</p>
-						<p style = "line-height: 5px">top</p>
-					</div>
-				</div>
-				<div
-					class = "my-bag-item"
-					@click = "
-						$refs.announce.isShow = true;
-						isNewNotice = false;
-					"
-				>
-					<!--                    <span></span>-->
-					<p>
-						<i class = "iconfont icon-icon-notice"></i>
-					</p>
-					<p>公告</p>
-					<div
-						v-show = "isNewNotice"
-						class = "red-point"
-					></div>
-				</div>
-				<div
-					class = "my-bag-item"
-					@click = "showBag"
-				>
-					<p>
-						<i class = "iconfont icon-icon-bagdefuben"></i>
-					</p>
-					<p>背包</p>
-				</div>
-				
-				<div
-					class = "new-welfare"
-					@click = "showWealfare"
-				>
-					<div v-if = "isTime || isNew">
-						<img
-							src = "./assets/image/fixgift.png"
-							v-if = "!isNew"
-							alt = ""
-							width = "100%"
-						/>
-						<img
-							src = "./assets/image/fixgifts.png"
-							v-else
-							alt = ""
-							width = "100%"
-						/>
-						<div v-if = "isNew">
-							<p>{{ wealfareTime.split(":")[0] }}</p>
-							<p>:</p>
-							<p>{{ wealfareTime.split(":")[1] }}</p>
-							<p>:</p>
-							<p>{{ wealfareTime.split(":")[2] }}</p>
-						</div>
-					</div>
-				</div>
-				<div
-					@click.stop = "openMedia = !openMedia"
-					class = "my-bag-item"
-				>
-					<p>
-						<i class = "iconfont iconicon-qq2"></i>
-					</p>
-					<p>QQ</p>
-				</div>
-				<!--                hash 走势图-->
-				<div
-					v-if = "!!discount.endTime"
-					class = "my-bag-item"
-					@click = "showLine"
-				>
-					<p>
-						<i class = "iconfont icon-icon-number"></i>
-					</p>
-					<p>Number</p>
-				</div>
-				<div
-					style = "border: none; background: none"
-					@click.stop = "viewMore = !viewMore"
-					class = "my-bag-item hide-p hide-ipad"
-				>
-					<p>
-						<Icon type = "ios-arrow-forward" />
-					</p>
-					<p>收起</p>
-				</div>
-				<!-- 客服弹窗 -->
-				<div
-					class = "media-modal"
-					:class = "{ open: openMedia }"
-					@click = "kfClickFunc"
-				>
-					<div
-						v-for = "item in mediaData"
-						:key = "item.url"
-					>
-						<div class = "media-title">
-							<span>{{ item.name }}</span>
-							<span @click = "item.isOpen = !item.isOpen">
-								<i
-									class = "iconfont iconicon-down2 cursor"
-									style = "font-size: 12px"
-								></i>
-							</span>
-						</div>
-						<div
-							class = "meida-qrcode"
-							v-show = "item.isOpen"
-						>
-							<div>
-								<img
-									:src = "item.img"
-									alt = ""
-								/>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</aside>
+		
 		<Notice
 			ref = "announce"
 			class = "hide-rrweb"
@@ -187,6 +51,8 @@
 </template>
 
 <script>
+// @ts-nocheck
+
 import Test from "@/views/New.Header/Test.vue";
 import NewFooter from "./views/New.Footer";
 import Header from "./views/Header";
@@ -239,6 +105,7 @@ export default reaxper({
 	provide () {
 		return {
 			reload : this.reload ,
+			showNotice:this.showNotice
 		};
 	} ,
 	data () {
@@ -457,6 +324,10 @@ export default reaxper({
 				this.$bag();
 			}
 		} ,
+		showNotice(){
+			this.$refs.announce.isShow = true;
+			this.isNewNotice = false;
+		}
 	} ,
 });
 </script>

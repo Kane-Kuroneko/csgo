@@ -15,7 +15,7 @@
 				<div
 					v-for = "{iconUrl,title,navigateTo:target,color} in rightTabs"
 					v-if="(!userStore.token && target==='/user/case') ? false : true"
-					@click="navigate(target)"
+					@click="navigate(target,)"
 					class = "tab-pane"
 				>
 					<img :src = "iconUrl">
@@ -43,8 +43,15 @@ export default reaxper({
 			rightTabs ,
 		};
 	} ,
+	inject: ["showNotice"],
 	methods : {
 		navigate(path){
+			if(path=='gonggao'){
+				this.showNotice()
+				//this.$refs.announce.isShow = true;
+				//this.isNewNotice = false;
+				return 
+			}
 			this.$router.push(path)
 		}
 	} ,
