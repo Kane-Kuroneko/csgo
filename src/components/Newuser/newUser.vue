@@ -221,7 +221,7 @@
 											</div>
 										</div>
 										<p class="online-pay-tips" style="text-align: left">
-											购买steam游戏拯救校花行动的饰品可赠送钻石，赠送
+											购买steam游戏Jump-Jump行动的饰品可赠送钻石，赠送
 											<span class="important-tips">比例为1:1 </span>
 										</p>
 										<p class="online-pay-tips hide-m" style="text-align: left">
