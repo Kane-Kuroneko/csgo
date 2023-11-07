@@ -105,7 +105,8 @@ export default reaxper({
 	provide () {
 		return {
 			reload : this.reload ,
-			showNotice:this.showNotice
+			showNotice:this.showNotice,
+			showWealfare:this.showWealfare,
 		};
 	} ,
 	data () {

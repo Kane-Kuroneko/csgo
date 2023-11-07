@@ -8,7 +8,7 @@
 				width="100% "
 				style="vertical-align: middle"
 			>
-			<!-- <img class="xinrenHD" :src="imGxinrenlibao" alt=""> -->
+			<img class="xinrenHD" style="width: 164px; right: 0;"  @click="openNewPlaer" :src="imGxinrenlibao" alt="">
 			
 		</div>
 		<img
@@ -97,6 +97,7 @@ export default reaxper({
 			homeRecommandedBoxes,
 		}
 	},
+	inject: ["showWealfare"],
 	data(){
 		return {
 			swiperConf : {
@@ -143,6 +144,9 @@ export default reaxper({
 			localStorage.setItem("box" , JSON.stringify(item));
 			reax_Box.setCurrentBox(item);
 			this.$router.push('/steer/case')
+		},
+		openNewPlaer(){
+			this.showWealfare();
 		}
 	}
 	

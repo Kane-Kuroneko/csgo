@@ -8,8 +8,8 @@
 				width="100% "
 				style="vertical-align: middle"
 			>
-			<!-- <img class="xinrenHD" :src="imGxinrenlibao" alt=""> -->
-			<img  class="erweima" :src="imGerweima" alt="">
+			<img class="xinrenHD" @click="openNewPlaer" style="cursor: pointer;" :src="imGxinrenlibao" alt="">
+			<img  class="erweima" @click="" :src="imGerweima" alt="">
 		</div>
 		<img
 			class="promotion-hr"
@@ -87,6 +87,7 @@ export default reaxper({
 			homeRecommandedBoxes,
 		}
 	},
+	inject: ["showWealfare"],
 	data(){
 		return {
 			imgHomePromotionBanner,
@@ -113,6 +114,9 @@ export default reaxper({
 			localStorage.setItem("box" , JSON.stringify(item));
 			reax_Box.setCurrentBox(item);
 			this.$router.push('/steer/case')
+		},
+		openNewPlaer(){
+			this.showWealfare();
 		}
 	}
 	
