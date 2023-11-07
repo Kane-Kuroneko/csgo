@@ -7415,7 +7415,7 @@ win-item p {
 .home-box-img {
 	height: 2rem;
 	margin: auto;
-	width: 3rem;
+	width: 100%;
 	position: relative;
 	transition: all 0.3s;
 }

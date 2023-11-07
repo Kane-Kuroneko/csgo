@@ -1,13 +1,15 @@
 <template>
 	<div class = "home-main-block">
 		
-		<div class="promotion-banner">
+		<div class="promotion-banner" style="position: relative;">
 			<img
 				:src="imgHomePromotionBanner"
 				height="auto"
 				width="100% "
 				style="vertical-align: middle"
 			>
+			<!-- <img class="xinrenHD" :src="imGxinrenlibao" alt=""> -->
+			<img  class="erweima" :src="imGerweima" alt="">
 		</div>
 		<img
 			class="promotion-hr"
@@ -93,7 +95,8 @@ export default reaxper({
 			imgPromotionTextBg,
 			imgHomeRecommandedHr,
 			imgRecommandedBoxPriceBg,
-			
+			imGxinrenlibao,
+			imGerweima
 		}
 	},
 	components : {
@@ -125,6 +128,13 @@ import imgBlindingPromotion from '@/views/New.MainBlock/Home.PC/img_1.png';
 import imgPromotionTextBg from '@/views/New.MainBlock/Home.PC/promotion-text-bg.svg';
 import imgHomeRecommandedHr from '@/views/New.MainBlock/Home.PC/home-recommanded-hr.svg';
 import imgRecommandedBoxPriceBg from '@/views/New.MainBlock/Home.PC/recommanded-box-price-bg.svg';
+
+
+import imGxinrenlibao from '@/views/New.MainBlock/Home.PC/xinrenlibao.png';
+import imGerweima from '@/views/New.MainBlock/Home.PC/erweima.png';
+
+//xinrenlibao.png
+
 </script>
 
 <style
@@ -274,5 +284,15 @@ img.promotion-hr{
 			}
 		}
 	}
+}
+.xinrenHD{
+	position: absolute;
+	right: 5%;
+	bottom: 5%;
+}
+.erweima{
+	position: absolute;
+	right: 7%;
+	top: 5%;
 }
 </style>
