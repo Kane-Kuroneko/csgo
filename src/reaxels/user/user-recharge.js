@@ -173,10 +173,13 @@ export const reaxel_Recharge = reaxel((ret) => {
 					break;
 				};
 				case "cashier" : {
-					const container = document.querySelector('#ali-cashier');
-					container.innerHTML = data.url;
+					const win = window.open('','');
+					win.document.write(data.url);
+					return;
+					// const container = document.querySelector('#ali-cashier');
+					// container.innerHTML = data.url;
 					/*@ts-expect-error*/
-					container.firstChild.submit();
+					// container.firstChild.submit();
 					break;
 				}
 				case "qr_code": {

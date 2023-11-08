@@ -49,7 +49,7 @@
 									style = "display: flex; align-items: center"
 									class = "line-bg"
 								>
-									<div class = "upgrade-box-music">
+									<div class = "upgrade-box-music" style="opacity: 0;visibility: hidden;">
 										<div @click = "isAnimation = !isAnimation">
 											<div
 												:class = "{

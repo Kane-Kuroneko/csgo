@@ -24,7 +24,7 @@
     "mobx": "^6.10.2",
     "qrcode": "^1.5.1",
     "reaxes": "0.0.11",
-    "reaxes-toolkit": "^0.0.10",
+    "reaxes-toolkit": "^0.0.12",
     "reaxes-utils": "^1.0.10",
     "reaxes-vue2": "^0.1.1",
     "rrweb": "^2.0.0-alpha.4",

@@ -849,7 +849,10 @@ export default reaxper({
 					if ( val !== lastTime ) {
 						lastTime = val;
 						// reaxel_Audio().audios.slice.play();
-						new ReaxlassAudio(slice3).play();
+						
+						setTimeout(() => {
+							new ReaxlassAudio(slice3).play();
+						});
 					}
 				}
 				catch ( e ) {

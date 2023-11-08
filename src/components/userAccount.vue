@@ -32,6 +32,7 @@
 					v-if="$initialStore.env === 'development'"
 					@click="_dev_fetch_clear_user_"
 				>注销测试账户</button>
+				<ModifyAvatar/>
 				<div class = "info-item">
 					<span>用户名：</span>
 					<Input
@@ -272,12 +273,16 @@ import { mapState , mapActions , mapMutations } from "vuex";
 import awsUpload from "../utils/upload";
 import Uint64 from "@/utils/Uint64";
 import HashModule from "@/components/HashModule/HashModule";
+import ModifyAvatar from '@/New.Components/modify-avatar';
 import { reaxel_user } from '@/reaxels/user';
 
 const { _dev_fetch_clear_user_ } = reaxel_user();
 export default reaxper({
 	name : "account" ,
-	components : { HashModule } ,
+	components : {
+		HashModule ,
+		ModifyAvatar,
+	} ,
 	data () {
 		return {
 			show : false ,
@@ -314,8 +319,7 @@ export default reaxper({
 		}) ,
 	} ,
 	methods : {
-		_dev_fetch_clear_user_,
-		...mapActions("account" , ["getUser"]) , ...mapMutations("account" , ["clearUser"]) ,
+		_dev_fetch_clear_user_ , ...mapActions("account" , ["getUser"]) , ...mapMutations("account" , ["clearUser"]) ,
 		avatarCircle () {
 			getAction(this.url.portAit).then(res => {
 				this.portaitImg = res.data;
@@ -444,7 +448,7 @@ export default reaxper({
 				// window.location.href = `https://steamcommunity.com/openid/login?openid.ns=http://specs.openid.net/auth/2.0&openid.claimed_id=http://specs.openid.net/auth/2.0/identifier_select&openid.identity=http://specs.openid.net/auth/2.0/identifier_select&openid.return_to=${window.location.origin}&openid.mode=checkid_setup`
 				window.location.href = `https://steambrige.site/out/openid/login?openid.ns=http://specs.openid.net/auth/2.0&openid.claimed_id=http://specs.openid.net/auth/2.0/identifier_select&openid.identity=http://specs.openid.net/auth/2.0/identifier_select&openid.return_to=${ window.location.origin }&openid.mode=checkid_setup`;
 			} else {
-				window.open("/login.html" , "_blank" , "height=600,width=800,top=0,left=0,toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no" );
+				window.open("/login.html" , "_blank" , "height=600,width=800,top=0,left=0,toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no");
 			}
 		} ,
 		unbindSteam () {
@@ -482,7 +486,7 @@ export default reaxper({
 			}).then(res => {
 				this.$Message.success({
 					content : "解绑成功" ,
-					duration : 3,
+					duration : 3 ,
 				});
 				this.getUser();
 				this.emailBoxShow = false;
@@ -499,7 +503,7 @@ export default reaxper({
 				this.emailBoxShow = true;
 				this.$Message.success({
 					content : "验证码已发送，请注意查收" ,
-					duration : 3,
+					duration : 3 ,
 				});
 			}).catch(err => {
 				this.$Message.error(err.response.data.errMsg);
@@ -507,7 +511,7 @@ export default reaxper({
 		} ,
 		getTradeUrl () {
 			// if (!this.user.steamId) return this.$Message.info('未绑定Steam')
-			window.open(`https://steamcommunity.com/profiles/76561198104209534/tradeoffers/privacy#trade_offer_access_url` );
+			window.open(`https://steamcommunity.com/profiles/76561198104209534/tradeoffers/privacy#trade_offer_access_url`);
 		} ,
 		loginOut () {
 			postAction("/api/user/logout").then(() => {
