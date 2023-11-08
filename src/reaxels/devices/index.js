@@ -32,6 +32,7 @@ export const reaxel_Device = reaxel((ret) => {
 		"mobile-full-screen",
 		/*各种pad*/
 		"mobile-pad",
+		/*横屏手机*/
 		"hr-mobile",
 		/*宽度至少为1366的台式机*/
 		"PC-min-1366",
@@ -119,7 +120,7 @@ export const reaxel_Device = reaxel((ret) => {
 			},
 			printDeviceInfo(additionalText = ret.deviceType){
 				if(process.env.NODE_ENV === "production") return;
-				if(process.env.NODE_ENV === "development") return;//开发环境注释设备信息
+				//开发环境注释设备信息
 				const info = `DPR : ${deviceStore.DPR}
 				PAR : ${deviceStore.PAR}
 				UA : ${deviceStore.UA}

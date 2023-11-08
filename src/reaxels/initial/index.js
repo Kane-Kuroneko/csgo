@@ -34,7 +34,10 @@ export const reaxel_initial = reaxel((ret) => {
 	},() => [store.isPhone]);
 	
 	function checkDevice() {
-		if(store.dpr > 1 && window.outerWidth < 751 ){
+		if(
+			store.dpr > 1.001 &&
+			/ios|ipad|andriod|phone|mobile/i.test(navigator.userAgent)
+		){
 			setState({isPhone : true});
 		}else {
 			setState({isPhone : false});

@@ -24,3 +24,5 @@ import { reaxel_Device } from './';
 import './PC-min-1366.less';
 import './mobile-full-screen.less';
 import './mobile-non-full-screen.less';
+import './hr-mobile.less';
+
