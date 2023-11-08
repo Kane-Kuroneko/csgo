@@ -293,7 +293,7 @@ const _dev_fetch_clear_user_ = () => {
 	}
 }
 
-
+import { reaxel_ModifyProfile } from './modify-profile';
 import { requester } from '../../requester/index';
 import { verify } from './verify-fields';
 import $store from '../../store';

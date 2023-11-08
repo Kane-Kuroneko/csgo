@@ -5885,6 +5885,7 @@ p {
 }
 
 .up-right {
+	text-align: center;
 	margin: 0.1rem auto 0;
 	width: 4rem;
 	padding: 10px 30px 18px 30px;
