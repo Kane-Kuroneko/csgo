@@ -963,7 +963,7 @@ html[data-reaxel-reactive-device="PC-min-1366"] {
 }
 
 .open-register {
-	width: 50vw;
+	width: 56vw;
 	font-size: 5.33vw;
 	margin: auto;
 	display: flex;
