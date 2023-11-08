@@ -5,7 +5,8 @@
 	>
 		<img
 			class="home-logo"
-			width="182"
+			width="260"
+
 			:src="imgLogo"
 			@click="$router.push('/')"
 		/>

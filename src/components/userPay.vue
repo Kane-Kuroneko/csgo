@@ -29,7 +29,7 @@
 				</p>
 				<p class = "online-pay-tips hide-m">
 					<span
-					>购买饰品后，存至个人中心--我的背包--购买记录，绑定交易链接可取回，即可在Steam游戏拯救校花行动内使用
+					>购买饰品后，存至个人中心--我的背包--购买记录，绑定交易链接可取回，即可在Steam游戏Jump-Jump行动内使用
 					</span
 					>
 				</p>
@@ -71,7 +71,7 @@
 					选择饰品
 					<p class = "jump-tips">
 						<span
-						>购买steam游戏拯救校花行动的饰品可赠送钻石，赠送
+						>购买steam游戏Jump-Jump行动的饰品可赠送钻石，赠送
 							<span
 								class = "important-tips"
 							>比例为1:1
@@ -172,7 +172,7 @@
 				</p>
 				<p class = "online-pay-tips hide-ipad hide-p">
 					<span
-					>购买饰品后，存至个人中心--我的背包--购买记录，绑定交易链接可取回，即可在Steam游戏拯救校花行动内使用
+					>购买饰品后，存至个人中心--我的背包--购买记录，绑定交易链接可取回，即可在Steam游戏Jump-Jump动内使用
 					</span
 					>
 				</p>
@@ -370,6 +370,7 @@ export default reaxper({
 		goHelpCenter () {
 			this.show = false;
 			this.$router.push("/page/helpcenter/Termsofuse");
+			//document.documentElement.scrollTop=0
 		} ,
 		async getExchangeRate () {
 			let rate = await getAction(this.url.rate);

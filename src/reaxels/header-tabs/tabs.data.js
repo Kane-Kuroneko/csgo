@@ -38,6 +38,12 @@ export const leftTabs = [
 ];
 export const rightTabs = [
 	{
+		iconUrl : imggonggao ,
+		title : "活动公告" ,
+		navigateTo : "gonggao" ,
+		color : "white" ,
+	} ,
+	{
 		iconUrl : imgDiamond ,
 		title : "我的背包" ,
 		navigateTo : "/user/case" ,
@@ -70,3 +76,7 @@ import imgDecorationsMall from '@/assets/image/New.images/btn_shangcheng (2).png
 import imgDiamond from '@/assets/image/New.images/btn_huoquzuanshi.png';
 import imgFairGame from '@/assets/image/New.images/btn_gongping.png';
 import imgHelpCenter from '@/assets/image/New.images/btn_bangzhu.png';
+
+//公告
+
+import imggonggao from '@/assets/image/New.images/btn_gonggao.png';

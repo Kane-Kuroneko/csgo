@@ -38,14 +38,24 @@
 					</div>
 				</div>
 			</div>
+			
+		</div>
+		
+		<div style="margin-top: 1rem;">
+			<!-- width: 250px;
+			position: absolute;
+			bottom: -33px;
+			left: 50%;
+			transform: translateX(-50%);
+			cursor: pointer; -->
 			<img
 				@click = "$router.push('/page/upgrade')"
+				style="width: 250px;display: block;margin: 0 auto;"
 				class = "war-hover"
 				src="../../assets/image/upgrade/Hall/img_4.png"
 				alt = ""
 			/>
 		</div>
-		
 		<div
 			v-if = "tap === 0"
 			class = "hall-container"

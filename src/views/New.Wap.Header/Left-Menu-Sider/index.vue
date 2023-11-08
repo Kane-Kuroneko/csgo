@@ -8,7 +8,7 @@
 			<div>
 				<div
 					v-for="{iconUrl,title,navigateTo,color} in tabs"
-					@click="$router.push(navigateTo),toggleWapSiderMenu()"
+					@click="funTo(navigateTo)"
 					class="menu-item"
 				>
 					<img :src="iconUrl" style="width: 6.93vw;height: 6.93vw;">
@@ -52,9 +52,21 @@ export default reaxper({
 			siderWapMenuShow,
 		}
 	},
+	inject: ["showNotice"],
 	methods:{
 		toggleWapSiderMenu,
 		clearUserInfo,
+		funTo(path){
+			if(path=='gonggao'){
+				this.showNotice()
+				this.toggleWapSiderMenu()
+				//this.$refs.announce.isShow = true;
+				//this.isNewNotice = false;
+				return 
+			}
+			this.$router.push(path);
+			this.toggleWapSiderMenu()
+		}
 	},
 	components : {},
 	

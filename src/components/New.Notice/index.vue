@@ -1447,6 +1447,7 @@ export default reaxper({
 			});
 		} ,
 		switchMenu (type , el) {
+			
 			this.menu.forEach(item => {
 				item.isChacked = item.type === type;
 			});

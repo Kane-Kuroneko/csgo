@@ -2,13 +2,15 @@
 	<div  class = "drop-precious-container" >
 		<div
 			v-if="baseInfo"
-			class = "online-users"
+			class = "online-users" style="padding: 12px 29px;"
 		>
 			<span>开箱展示</span>
-			<span>
-				<span class = "green-dot"></span>
-				<span>{{ baseInfo.userOnline }}人</span>
+			<span style="    display: flex;
+    align-items: baseline;">
+				<!-- <span class = "green-dot"></span> -->
+				<span style="color: #fff;font-size: 20px;">{{ baseInfo.userOnline }} </span><span style="font-size: 10px;color:#FFF ;">人</span>
 			</span>
+			<span style="color: #93E09F;">在线人数</span>
 		</div>
 		<div class = "precious-swiper-container" :style="{width:isPhone ? '100%' : 'calc(100% - 116px)' }">
 			<div v-if = "dropPreciousData">
@@ -36,7 +38,7 @@
 								<img :src="imgLevel">
 								<span class="lv-text">{{ (+ el.successRate).toFixed(3) }}</span>
 							</span>
-							<img width="64" height="64" :src="imgHost(el.stuffImage)">
+							<img width="64" height="64" :src="	(el.stuffImage)">
 							<span class="name">{{ el.stuffName.split("|")[0] }}</span>
 							<span>{{ el.stuffName.split("|")[1] }}</span>
 						</div>
@@ -109,7 +111,7 @@ export default reaxper({
 			},
 			swiperOption : {
 				slidesPerView : "auto" ,
-				spaceBetween : 0 , 
+				spaceBetween : 1 , 
 				// slidesPerGroup: 'auto',
 				loopFillGroupWithBlank : false ,
 				loop : true ,

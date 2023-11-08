@@ -1,13 +1,15 @@
 <template>
 	<div class = "home-main-block">
 		
-		<div class="promotion-banner">
+		<div class="promotion-banner" style="position: relative;">
 			<img
 				:src="imgHomePromotionBanner"
 				height="auto"
 				width="100% "
 				style="vertical-align: middle"
 			>
+			<img v-if="$parent.$parent.isNew" class="xinrenHD" @click="openNewPlaer" style="cursor: pointer;" :src="imGxinrenlibao" alt="">
+			<img  class="erweima" @click="" :src="imGerweima" alt="">
 		</div>
 		<img
 			class="promotion-hr"
@@ -85,6 +87,7 @@ export default reaxper({
 			homeRecommandedBoxes,
 		}
 	},
+	inject: ["showWealfare"],
 	data(){
 		return {
 			imgHomePromotionBanner,
@@ -93,7 +96,8 @@ export default reaxper({
 			imgPromotionTextBg,
 			imgHomeRecommandedHr,
 			imgRecommandedBoxPriceBg,
-			
+			imGxinrenlibao,
+			imGerweima
 		}
 	},
 	components : {
@@ -103,6 +107,8 @@ export default reaxper({
 		const { requestPromotions ,requestHomeRecommandedBoxes} = reaxel_initial();
 		requestPromotions();
 		requestHomeRecommandedBoxes();
+		
+		//this.$parent.$parent.isNew
 	},
 	methods : {
 		setCurrentBox(item){
@@ -110,6 +116,9 @@ export default reaxper({
 			localStorage.setItem("box" , JSON.stringify(item));
 			reax_Box.setCurrentBox(item);
 			this.$router.push('/steer/case')
+		},
+		openNewPlaer(){
+			this.showWealfare();
 		}
 	}
 	
@@ -125,6 +134,13 @@ import imgBlindingPromotion from '@/views/New.MainBlock/Home.PC/img_1.png';
 import imgPromotionTextBg from '@/views/New.MainBlock/Home.PC/promotion-text-bg.svg';
 import imgHomeRecommandedHr from '@/views/New.MainBlock/Home.PC/home-recommanded-hr.svg';
 import imgRecommandedBoxPriceBg from '@/views/New.MainBlock/Home.PC/recommanded-box-price-bg.svg';
+
+
+import imGxinrenlibao from '@/views/New.MainBlock/Home.PC/xinrenlibao.png';
+import imGerweima from '@/views/New.MainBlock/Home.PC/erweima.png';
+
+//xinrenlibao.png
+
 </script>
 
 <style
@@ -274,5 +290,16 @@ img.promotion-hr{
 			}
 		}
 	}
+}
+.xinrenHD{
+	position: fixed;
+    right: 1%;
+    bottom: 5%;
+    z-index: 999;
+}
+.erweima{
+	position: absolute;
+	right: 7%;
+	top: 5%;
 }
 </style>

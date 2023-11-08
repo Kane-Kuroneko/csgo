@@ -22,7 +22,7 @@
 			</div>
 			
 			<p class="tips" style="font-size: 20px;margin-top: 20px;">
-				选择饰品 <br/> 购买steam游戏拯救校花行动的饰品可赠送钻石，
+				选择饰品 <br/> 购买steam游戏Jump-Jump行动的饰品可赠送钻石，
 				<span style="color:#FFBC2C;">赠送比例为1:1</span>
 			   ,购买高额饰品会有额外钻石赠送
 			</p>
@@ -88,7 +88,7 @@
 			</div>
 			<p style="color: white;font-size: 24px;margin-top: 150px;">
 				购买遇到了问题？ <span
-				@click="$router.push('/page/helpcenter/其他流程问题')"
+				@click="goHelp('其他流程问题')"
 				style="color: #FFBC2C;cursor: pointer;"
 			>前往解决 ></span><br>
 				购买成功后，3分钟内到账，届时请刷新网页，如长时间未到账，请联系QQ群管理员
@@ -96,8 +96,8 @@
 			<p style="font-size: 14px;font-weight: bold;color: #D9D9D9;margin-top: 40px;">
 				钻石不会过期，但不能提现或转赠他人<br>
 				赠送钻石到账时间最高会有10分钟左右延迟<br>
-				购买饰品后，存至个人中心--我的背包--购买记录，绑定交易链接可取回，即可在Steam游戏拯救校花行动内使用<br>
-				购买前请您确保已仔细阅读 <span style="color: #FFBC2C;cursor: pointer;" @click="$router.push('/page/helpcenter/服务协议')">《97hash服务协议》</span>，成功购买即代表您对协议无异议<br>
+				购买饰品后，存至个人中心--我的背包--购买记录，绑定交易链接可取回，即可在Steam游戏Jump-Jump行动内使用<br>
+				购买前请您确保已仔细阅读 <span style="color: #FFBC2C;cursor: pointer;" @click="goHelp('服务协议')">《97hash服务协议》</span>，成功购买即代表您对协议无异议<br>
 				网站内物品禁止转卖交易！
 			</p>
 		</div>
@@ -172,6 +172,10 @@ export default reaxper({
 			}).finally(() => {
 				
 			})
+		},
+		goHelp(val){
+			this.$router.push('/page/helpcenter/'+val)
+			document.documentElement.scrollTop=0
 		},
 	},
 	created () {

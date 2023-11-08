@@ -114,11 +114,12 @@ export const reaxel_Device = reaxel((ret) => {
 						return deviceType;
 					}
 				}
-				if(process.env.NODE_ENV === "development") window.alert(`此设备未成功识别为任何类型,请检查reaxel::device.estimateDevices!`);
+				//if(process.env.NODE_ENV === "development") window.alert(`此设备未成功识别为任何类型,请检查reaxel::device.estimateDevices!`);
 				ret.printDeviceInfo('');
 			},
 			printDeviceInfo(additionalText = ret.deviceType){
 				if(process.env.NODE_ENV === "production") return;
+				if(process.env.NODE_ENV === "development") return;//开发环境注释设备信息
 				const info = `DPR : ${deviceStore.DPR}
 				PAR : ${deviceStore.PAR}
 				UA : ${deviceStore.UA}

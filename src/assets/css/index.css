@@ -1763,6 +1763,7 @@ li {
 	position: relative;
 	aspect-ratio: 1.4;
 	padding-top: 66%;
+	min-height: 124px
 }
 
 .store-goods {
@@ -3045,6 +3046,7 @@ li {
 
 .search-input-box {
 	width: 100%;
+
 }
 
 .search-input .ivu-icon-logo-usd {
@@ -7416,7 +7418,7 @@ win-item p {
 .home-box-img {
 	height: 2rem;
 	margin: auto;
-	width: 3rem;
+	width: 100%;
 	position: relative;
 	transition: all 0.3s;
 }
