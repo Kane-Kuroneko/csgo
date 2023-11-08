@@ -19,7 +19,7 @@
 		<NewFooter v-else ></NewFooter>
 		<!--		<Footer class = "hide-rrweb"></Footer>-->
 		<!-- 公告-->
-		<aside
+		<!-- <aside
 			class = "fix-module hide-rrweb hide-p hide-ipad"
 			@click = "viewMore = !viewMore"
 			v-show = "viewMore"
@@ -28,7 +28,7 @@
 				src = "./assets/image/more.png"
 				alt = ""
 			>
-		</aside>
+		</aside> -->
 		
 		<Notice
 			ref = "announce"

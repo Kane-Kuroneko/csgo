@@ -90,7 +90,7 @@
 									<Input
 										class = "search-input search-input-box"
 										type = "number"
-										style = "margin: 0 0.1rem; width: 1.5rem"
+										style = "margin: 0 0.1rem; width: 1.5rem;background-color: #fff;"
 										v-model = "searchForm.startPrice"
 										@on-clear = "searchFunc($event)"
 										clearable
@@ -108,7 +108,7 @@
 										class = "search-input search-input-box"
 										type = "number"
 										icon = "iconfont icon-icon_diamond1 "
-										style = "margin: 0 0.1rem; width: 1.5rem"
+										style = "margin: 0 0.1rem; width: 1.5rem;background-color: #fff;"
 										v-model = "searchForm.endPrice"
 										@on-clear = "searchFunc($event)"
 										clearable

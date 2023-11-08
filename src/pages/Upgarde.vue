@@ -354,7 +354,7 @@
 						</div>
 						<div class = "up-right">
 							<img
-								style="cursor: pointer;"
+								style="cursor: pointer;display: block;margin: 0 auto;"
 								width="180"
 								@click = "upgrade"
 								src="../assets/image/upgrade/img_9.png"
@@ -876,7 +876,7 @@
 										<div
 											class = "default-btn upgrade-btn"
 											@click = "upgrade"
-											style = "padding: 0"
+											style = "padding: 0;"
 										>
 											确认升级
 										</div>
@@ -889,7 +889,7 @@
 							>
 								<img
 									style = "width: 100%"
-									src = "../assets/image/upgrade/img.png"
+									src = "../assets/image/upgrade/img.svg"
 								/>
 							</div>
 						</div>

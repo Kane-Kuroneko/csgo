@@ -233,7 +233,7 @@
       getUserInfo() {
         let link = +this.id === this.user.id ? url.selfInfo : url.userInfo;
         getAction(link, +this.id === this.user.id ? "" : {userId: this.id}).then(res => {
-			  debugger;
+			  ;
           this.userInfo = res.data;
         })
       },
@@ -566,7 +566,7 @@
     align-items: center;
     background: #1D202B;
     margin-bottom: 10px;
-    padding: 10px 40px;
+    padding: 10px 20px;
 
     img{
       width: 15%;
@@ -576,6 +576,7 @@
       font-size: 17px;
       font-weight: 600;
       color: #FFFFFF;
+      max-width: 90px;
     }
 
     .privacy-btn{

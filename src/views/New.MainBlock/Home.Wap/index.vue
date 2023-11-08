@@ -8,7 +8,7 @@
 				width="100% "
 				style="vertical-align: middle"
 			>
-			<img class="xinrenHD" style="width: 164px; right: 0;"  @click="openNewPlaer" :src="imGxinrenlibao" alt="">
+			<img class="xinrenHD" style="width: 164px; right:-23px;"  @click="openNewPlaer" :src="imGxinrenlibao" alt="">
 			
 		</div>
 		<img
@@ -396,9 +396,10 @@ img.promotion-hr{
 	}
 }
 .xinrenHD{
-	position: absolute;
-	right: 5%;
-	bottom: 5%;
+	position: fixed;
+    right: 2%;
+   
+    z-index: 999;
 }
 .erweima{
 	position: absolute;

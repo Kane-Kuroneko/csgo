@@ -8,7 +8,7 @@
 				width="100% "
 				style="vertical-align: middle"
 			>
-			<img class="xinrenHD" @click="openNewPlaer" style="cursor: pointer;" :src="imGxinrenlibao" alt="">
+			<img v-if="$parent.$parent.isNew" class="xinrenHD" @click="openNewPlaer" style="cursor: pointer;" :src="imGxinrenlibao" alt="">
 			<img  class="erweima" @click="" :src="imGerweima" alt="">
 		</div>
 		<img
@@ -107,6 +107,8 @@ export default reaxper({
 		const { requestPromotions ,requestHomeRecommandedBoxes} = reaxel_initial();
 		requestPromotions();
 		requestHomeRecommandedBoxes();
+		
+		//this.$parent.$parent.isNew
 	},
 	methods : {
 		setCurrentBox(item){
@@ -290,9 +292,10 @@ img.promotion-hr{
 	}
 }
 .xinrenHD{
-	position: absolute;
-	right: 5%;
-	bottom: 5%;
+	position: fixed;
+    right: 1%;
+    bottom: 5%;
+    z-index: 999;
 }
 .erweima{
 	position: absolute;

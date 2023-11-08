@@ -41,7 +41,7 @@
           </div>
           <div v-if="isPhone" class="rt-area area-item">
             <div align="center" @click="replaceSkins={name:'',salePrice:0}">
-              <img :src="imgHost(replaceSkins.image)" alt="">
+              <img v-if="replaceSkins.image" :src="imgHost(replaceSkins.image)" alt="">
               <p style="text-align: center">{{replaceSkins.name}}</p>
             </div>
             <p>汰换的物品价值: <span><i class="iconfont icon-icon_diamond1"></i>{{replaceSkins.salePrice}}</span></p>

@@ -370,6 +370,7 @@ export default reaxper({
 		goHelpCenter () {
 			this.show = false;
 			this.$router.push("/page/helpcenter/Termsofuse");
+			//document.documentElement.scrollTop=0
 		} ,
 		async getExchangeRate () {
 			let rate = await getAction(this.url.rate);
