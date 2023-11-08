@@ -117,6 +117,7 @@
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4) {
                 if (xhr.status == 200) {
+                    
                     window.location.href = window.location.origin
                 } else {
                     let res = JSON.parse(xhr.response)

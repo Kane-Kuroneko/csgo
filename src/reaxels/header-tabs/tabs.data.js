@@ -1,3 +1,11 @@
+/*
+ * @Description: 
+ * @Version: 2.0
+ * @Autor: cjw
+ * @Date: 2023-11-07 10:19:10
+ * @LastEditors: cjw
+ * @LastEditTime: 2023-11-08 17:20:21
+ */
 export const leftTabs = [
 	{
 		iconUrl : imgHashBox ,
@@ -17,12 +25,12 @@ export const leftTabs = [
 		navigateTo : "/page/upgradeHall" ,
 		color : "rgb(14,227,181)" ,
 	} ,
-	{
-		iconUrl : imgMakeWish ,
-		title : "神龙许愿" ,
-		navigateTo : "/page/wish" ,
-		color : "rgb(60,174,255)" ,
-	} ,
+	// {
+	// 	iconUrl : imgMakeWish ,
+	// 	title : "神龙许愿" ,
+	// 	navigateTo : "/page/wish" ,
+	// 	color : "rgb(60,174,255)" ,
+	// } ,
 	{
 		iconUrl : imgRollRoom ,
 		title : "ROLL房" ,

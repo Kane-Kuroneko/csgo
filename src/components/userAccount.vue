@@ -514,8 +514,10 @@ export default reaxper({
 				this.$store.commit("account/clearUser");
 				localStorage.setItem("token" , "");
 				localStorage.removeItem("userinfo");
+				
 				this.$wealfare(false , false);
 				this.$router.push("/");
+				window.location.reload()
 			});
 		} ,
 		bindEmail (isAnswerChang) {

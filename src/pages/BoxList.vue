@@ -380,6 +380,10 @@ export default reaxper({
 	methods : {
 		...mapActions("account" , ["getDiscount"]) ,
 		searchFunc (data) {
+			if(this.searchForm.name==''&&this.searchForm.startPrice==''&&this.searchForm.endPrice==''){
+				this.getBoxData(this.boxType);
+				return
+			}
 			let parmas = {
 				...data ,
 				type : this.boxType,

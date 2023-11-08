@@ -343,7 +343,7 @@
 						<div class = "game-tips-words">
 							本站所有游戏道具，只能本人取回到游戏内使用，均不允许站内交易及互换
 						</div>
-						<div
+						<!-- <div
 							@click = "wishShow = true"
 							class = "buy-wish cursor c-shake"
 						>
@@ -351,7 +351,7 @@
 								style = "width: 180%"
 								src = "../assets/image/upgrade/img.png"
 							/>
-						</div>
+						</div> -->
 						<div class = "up-right">
 							<img
 								style="cursor: pointer;display: block;margin: 0 auto;"
@@ -883,7 +883,7 @@
 									</div>
 								</div>
 							</div>
-							<div
+							<!-- <div
 								style = "width: 75%; margin: 0 auto"
 								@click = "$router.push('/page/wish')"
 							>
@@ -891,7 +891,7 @@
 									style = "width: 100%"
 									src = "../assets/image/upgrade/img.svg"
 								/>
-							</div>
+							</div> -->
 						</div>
 					</div>
 				</div>

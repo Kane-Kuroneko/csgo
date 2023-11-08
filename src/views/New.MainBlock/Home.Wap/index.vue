@@ -8,7 +8,7 @@
 				width="100% "
 				style="vertical-align: middle"
 			>
-			<img class="xinrenHD" style="width: 164px; right:-23px;"  @click="openNewPlaer" :src="imGxinrenlibao" alt="">
+		
 			
 		</div>
 		<img
@@ -97,7 +97,6 @@ export default reaxper({
 			homeRecommandedBoxes,
 		}
 	},
-	inject: ["showWealfare"],
 	data(){
 		return {
 			swiperConf : {
@@ -140,13 +139,11 @@ export default reaxper({
 	},
 	methods : {
 		setCurrentBox(item){
-			reaxel_Audio().audios.goBox.play();
+			const audio = document.getElementById("goBoxAudio");
+			if ( audio ) audio.play();
 			localStorage.setItem("box" , JSON.stringify(item));
 			reax_Box.setCurrentBox(item);
 			this.$router.push('/steer/case')
-		},
-		openNewPlaer(){
-			this.showWealfare();
 		}
 	}
 	
@@ -154,7 +151,6 @@ export default reaxper({
 
 import { reaxel_box } from '@/reaxels/box';
 import { reaxel_initial } from '@/reaxels/initial';
-import { reaxel_Audio } from '@/reaxels/initial/audio';
 import {
 	swiper ,
 	swiperSlide ,
@@ -396,10 +392,9 @@ img.promotion-hr{
 	}
 }
 .xinrenHD{
-	position: fixed;
-    right: 2%;
-   
-    z-index: 999;
+	position: absolute;
+	right: 5%;
+	bottom: 5%;
 }
 .erweima{
 	position: absolute;

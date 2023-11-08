@@ -15,7 +15,7 @@
 							</div>
 						</div>
 						<div v-if="isLogin" class="new-register">
-							<div class="count-time-roll" style="position: relative; z-index: 2; margin: auto">
+							<div class="count-time-roll" style="position: relative; z-index: 2; margin: auto;top: -15px;">
 								<div class="roll-time-num">
 									<span>
 										{{ countTime?.split(" : ")[0]?.split("")[0] }}
@@ -171,8 +171,8 @@
 										</div>
 										<div class="charge-input">
 											<div class="swiper-giving">
-												<div class="prev item-giving" @click="translateIndex('p')">
-													<i class="iconfont iconicon-down2"></i>
+												<div class="prev item-giving" @click="translateIndex('p')" style="width: 40px;height: 40px;background: #425062;opacity: 1;">
+													<i class="iconfont iconicon-down2" style="font-size: 24px;line-height: 30px; opacity: 1;"></i>
 												</div>
 												<div class="swiper-giving-item">
 													<div class="active-charge" style="flex-wrap: nowrap" :style="translateDis">
@@ -205,8 +205,8 @@
 														</div>
 													</div>
 												</div>
-												<div class="next item-giving" @click="translateIndex('n')">
-													<i class="iconfont iconicon-down2"></i>
+												<div class="next item-giving" @click="translateIndex('n')" style="width: 40px;height: 40px;background: #425062;   ">
+													<i class="iconfont iconicon-down2" style="font-size: 24px;line-height: 30px; left: 10%;top:15%;opacity: 1;"></i>
 												</div>
 											</div>
 											<div class="hide-m">

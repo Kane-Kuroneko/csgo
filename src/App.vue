@@ -47,6 +47,7 @@
 			ref = "EchartLine"
 		></EchartLine>
 		<LoginModal></LoginModal>
+		<img v-if="isNew" class="xinrenHD" @click="openNewPlaer" style="cursor: pointer;" :src="imGxinrenlibao" alt="">
 	</div>
 </template>
 
@@ -74,6 +75,8 @@ import { reaxel_initial } from "@/reaxels/initial";
 import NewWapHeader from "./views/New.Wap.Header";
 import NewWapFooter from "./views/New.Wap.Footer";
 
+import imGxinrenlibao from '@/views/New.MainBlock/Home.PC/xinrenlibao.png';
+
 const queryString = require("query-string");
 const reax_user = reaxel_user();
 const reax_Initial = reaxel_initial();
@@ -85,6 +88,7 @@ export default reaxper({
 			reax_Initial ,
 			initialStore ,
 			isPhone ,
+			imGxinrenlibao,
 		};
 	} ,
 	components : {
@@ -328,19 +332,39 @@ export default reaxper({
 		showNotice(){
 			this.$refs.announce.isShow = true;
 			this.isNewNotice = false;
+		},
+		openNewPlaer(){
+			this.showWealfare();
 		}
 	} ,
 });
 </script>
 
 <style>
+
 #app {
 	min-width: 1368px;
 }
-
+@media screen and (min-width: 767px) {
+	
+	.xinrenHD{
+		position: fixed;
+		right: 1%;
+		bottom: 5%;
+		z-index: 999;
+		width: 360px;
+	}
+}
 @media screen and (max-width: 767px) {
 	#app {
 		min-width: 100%;
+	}
+	.xinrenHD{
+		position: fixed;
+		right: 4%;
+		bottom: 63%;
+		z-index: 999;
+		width: 126px;
 	}
 }
 
@@ -403,4 +427,5 @@ export default reaxper({
 	color: #fffffe !important;
 	font-size: 20px !important;
 }
+
 </style>
