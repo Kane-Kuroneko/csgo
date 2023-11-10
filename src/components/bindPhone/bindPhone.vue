@@ -213,7 +213,7 @@ export default {
 
 <style scoped>
 /deep/ .ivu-input[disabled] {
-  background: #98A8B4;
+ /* background: #98A8B4; */
   /*cursor: none;*/
 }
 

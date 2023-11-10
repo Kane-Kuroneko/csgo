@@ -123,7 +123,8 @@
 										src="../../assets/image/newuser/steptwom.png"
 										class="hide-p hide-ipad"
 										alt=""
-										style="width: 80%"
+										
+										style="width: 80%,opacity: 0;"
 									/>
 									<div class="fix-btn">
 										<div class="default-btn upgrade-btn open-register" @click="step.two = 2">
@@ -142,11 +143,9 @@
 									</div>
 									<div v-if="isPhoneCode">
 										<div class="charge-tips">
-											充值任意金额，额外获得开箱福利，白嫖
-											<span>$388</span>
-											ROLL房
+											充值任意金额，额外获得开箱福利
 										</div>
-										<div class="charge-way">
+										<!-- <div class="charge-way">
 											<div
 												:class="{
 													active: reax_Recharge.channelObject?.ids === el.ids,
@@ -168,9 +167,9 @@
 													v-else
 												/>
 											</div>
-										</div>
+										</div> -->
 										<div class="charge-input">
-											<div class="swiper-giving">
+											<div class="swiper-giving" style="position: relative;right: 43px;">
 												<div class="prev item-giving" @click="translateIndex('p')" style="width: 40px;height: 40px;background: #425062;opacity: 1;">
 													<i class="iconfont iconicon-down2" style="font-size: 24px;line-height: 30px; opacity: 1;"></i>
 												</div>
@@ -195,11 +194,12 @@
 																	<i class="iconfont icon-icon_diamond1" style="font-weight: 400"></i>
 																	<span class="font-bold">{{ el.goodsPrice }} </span>
 																</div>
-																<p v-if="el.giving !== 0" style="color: #ff6e6e">
+																<!-- <p v-if="el.giving !== 0" style="color: #ff6e6e">
 																	+{{ el.giving }}%
 																	<i class="iconfont icon-icon_diamond1" style="font-weight: 400"></i>
 																</p>
-																<p v-else></p>
+																<p v-else></p> -->
+																<p ></p>
 																<div>${{ el.goodsPrice }}</div>
 															</div>
 														</div>
@@ -309,8 +309,9 @@
 										<div
 											class="default-btn upgrade-btn open-register"
 											@click="
-												getStep(4);
-												step.steps = 4;
+												//getStep(4);
+												//step.steps = 4;
+												show = false;
 											"
 										>
 											确定
@@ -1069,9 +1070,10 @@ html[data-reaxel-reactive-device="PC-min-1366"] {
 	}
 
 	.new-register {
-		padding: 0;
+		padding: 0 43px;
 		width: 100%;
-		background: url("../../assets/image/newuser/bgm.png") no-repeat top left / contain;
+		background: url("../../assets/image/newuser/bgm.png") no-repeat top ;
+		background-position-y: 28px;
 	}
 
 	.phone-code {

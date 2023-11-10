@@ -49,8 +49,9 @@
 									style = "display: flex; align-items: center"
 									class = "line-bg"
 								>
-									<div class = "upgrade-box-music" style="opacity: 0;visibility: hidden;">
-										<div @click = "isAnimation = !isAnimation">
+									<div class = "upgrade-box-music" >
+										<!-- <div @click = "isAnimation = !isAnimation"> -->
+											<div>
 											<div
 												:class = "{
 													'mute-line': isAnimation !== true,
@@ -68,7 +69,7 @@
 											<img src="../assets/image/upgrade/img_1.png" width="65">
 										</div>
 										<div
-											class = "process-box-text"v
+											class = "process-box-text"
 											style = "color: white;font-size: 20px;font-weight: normal;"
 										>
 											公平游戏
@@ -364,7 +365,7 @@
 							@click = "fairGame"
 							src="../assets/image/upgrade/img_8.png" 
 							width="123"
-							style = "cursor: pointer;"
+							style = "cursor: pointer;position: absolute;right: 0;"
 						>
 					</div>
 				</div>
@@ -615,7 +616,8 @@
 							<div>
 								<div class = "music-m-close">
 									<div class = "upgrade-box-music upgrade-box-seed">
-										<div @click = "isAnimation = !isAnimation">
+										<!-- <div @click = "isAnimation = !isAnimation"> -->
+											<div >
 											<div
 												:class = "{
 													'mute-line': isAnimation !== true,

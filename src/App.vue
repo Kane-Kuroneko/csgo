@@ -47,7 +47,8 @@
 			ref = "EchartLine"
 		></EchartLine>
 		<LoginModal></LoginModal>
-		<img v-if="isNew" class="xinrenHD" @click="openNewPlaer" style="cursor: pointer;" :src="imGxinrenlibao" alt="">
+		<img v-if="isNew" class="xinrenHD" @click="openNewPlaer" style="cursor: pointer;" :src="isPhone?imGxinrenlibao_Wap:imGxinrenlibao" alt="">
+
 	</div>
 </template>
 
@@ -76,7 +77,7 @@ import NewWapHeader from "./views/New.Wap.Header";
 import NewWapFooter from "./views/New.Wap.Footer";
 
 import imGxinrenlibao from '@/views/New.MainBlock/Home.PC/xinrenlibao.png';
-
+import imGxinrenlibao_Wap from '@/views/New.MainBlock/Home.Wap/xinrenlibao.png';
 const queryString = require("query-string");
 const reax_user = reaxel_user();
 const reax_Initial = reaxel_initial();
@@ -89,6 +90,7 @@ export default reaxper({
 			initialStore ,
 			isPhone ,
 			imGxinrenlibao,
+			imGxinrenlibao_Wap
 		};
 	} ,
 	components : {
@@ -201,6 +203,8 @@ export default reaxper({
 		} ,
 	} ,
 	created () {
+		
+		reax_Initial.requestCompanyInfo()
 		this.equipment();
 		this.tecent();
 		this.getDiscount(); // 用户折扣券
@@ -364,7 +368,7 @@ export default reaxper({
 		right: 4%;
 		bottom: 63%;
 		z-index: 999;
-		width: 126px;
+		width: 100px;
 	}
 }
 

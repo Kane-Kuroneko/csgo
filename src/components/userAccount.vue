@@ -50,7 +50,7 @@
 					</div>
 					<div
 						@click = "changeUserName(disable.uesrname)"
-						class = "default-btn user-btn"
+						class = "default-btn user-btn"  style="opacity: 0;"
 					>
 						{{ disable.uesrname ? "保存" : "修改" }}
 					</div>

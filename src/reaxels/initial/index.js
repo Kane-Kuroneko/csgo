@@ -17,6 +17,8 @@ export const reaxel_initial = reaxel((ret) => {
 		isPhone:true,
 		dpr:window.devicePixelRatio,
 		env : process.env.NODE_ENV,
+		//公司备案信息
+		companyInfo:null,
 	});
 	/*检查设备UA*/
 	if ( navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i) ) {
@@ -63,8 +65,18 @@ export const reaxel_initial = reaxel((ret) => {
 			});
 			return data;
 		})
+	};
+	const requestCompanyInfo = async () => {
+		
+		return requester.get(`/api/home/icp`).then(( data ) => {
+			
+			setState({
+				
+				companyInfo : data ,
+			});
+			return data;
+		})
 	}
-	
 	/**
 	 * @description 请求首页的推荐箱子
 	 * @return {Promise<import('./types').Initial.boxInfo[]>}
@@ -87,6 +99,7 @@ export const reaxel_initial = reaxel((ret) => {
 			requestBaseInfo  ,
 			requestPromotions ,
 			requestHomeRecommandedBoxes,
+			requestCompanyInfo,
 			get isPhone(){return store.isPhone;},
 			get promotions () {return store.promotions;} ,
 			get dropPreciousData() {return store.dropPreciousData;} ,

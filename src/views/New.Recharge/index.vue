@@ -72,19 +72,31 @@
 				class="qrcode-container"
 				v-if="rechargeStore.qrcode"
 			>
+			<!-- {{ rechargeStore.channel }}1 -->
+			<img v-if="rechargeStore.channel.indexOf('weixin')>-1" src="@/assets/image/pay/weixin.png" alt="">
+			<img v-else src="@/assets/image/pay/zhifubao.png" alt="">
 				<QrCode
 					:text = "rechargeStore.qrcode"
 					:size = "initialStore.wap ? 200 : 200"
-					style = "padding: 0.15rem"
+					style = "padding: 0.15rem;position: absolute;"
 				></QrCode>
 				<span
 					class="cancel-recharge"
 					@click="cancelRecharge"
 				>取消支付</span>
-				<span
+				<!-- <span
 					@click="finishRecharge"
 					class="finish-recharge"
-				>支付完成</span>
+				>
+				支付完成</span> -->
+				<div
+					@click="finishRecharge"
+					class="pay-now-btn"
+					
+				>
+					<span>${{ reax_Recharge.itemObject.goodsPrice }}≈¥{{ (reax_Recharge.itemObject.goodsPrice * rechargeStore.rate).toFixed(2) }}</span>
+					<span>立即支付</span>
+				</div>
 			</div>
 			<p style="color: white;font-size: 24px;margin-top: 150px;">
 				购买遇到了问题？ <span
@@ -248,7 +260,8 @@ import QrCode from "vue-qrcode-component";
 			.pay-btn{
 				border:5px solid transparent;
 				cursor: pointer;
-				max-height: 40px;
+				height: 56px;
+				
 			}
 		}
 		

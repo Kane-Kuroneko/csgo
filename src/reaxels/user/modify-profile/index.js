@@ -1,3 +1,11 @@
+/*
+ * @Description: 
+ * @Version: 2.0
+ * @Autor: cjw
+ * @Date: 2023-11-08 18:44:32
+ * @LastEditors: cjw
+ * @LastEditTime: 2023-11-08 19:09:23
+ */
 export const reaxel_ModifyProfile = reaxel(() => {
 	const {
 		store ,
@@ -94,5 +102,6 @@ function chooseAvatar(id) {
 }
 
 import { reaxel_user } from '../';
+
 import { requester } from '../../../requester';
 import { avatars } from './avatars-mapping';

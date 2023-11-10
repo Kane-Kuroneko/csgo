@@ -119,6 +119,13 @@
 										style = "opacity: 0.5"
 									></i>
 								</div>
+								<div @click = "sortPrice()" style="display: flex;margin-left: 0;">5a
+									<span>{{ searchForm.sort == 1 ? "升序" : "降序" }}</span>
+									<i
+										class = "iconfont iconicon-arrow"
+										:class = "{ 'sort-down': searchForm.sort !== 1 }"
+									></i>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -577,12 +584,14 @@ export default {
 }
 
 .ivu-input-number-input {
-	background: #98a8b4;
+	/* background: #98a8b4; */
 	border: 0px solid #030000;
 	box-shadow: 0px 2px 8px 0px rgba(11, 11, 11, 0.1);
 	border-radius: 3px;
 }
-
+.ivu-input{
+	background: #fff !important;
+}
 .ivu-input-number-handler-wrap {
 	display: none;
 }
@@ -613,5 +622,8 @@ export default {
 	background: linear-gradient(92deg, #dddddd, rgba(170, 178, 182, 0));
 	border: 0px solid #030000;
 	box-shadow: 0px 1px 50px 0px rgba(0, 0, 0, 0.9);
+}
+.search-box /deep/ input{
+	background-color: #fff ;
 }
 </style>

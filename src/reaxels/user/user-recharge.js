@@ -17,6 +17,7 @@ export const reaxel_Recharge = reaxel((ret) => {
 		channelIds: null,
 		goodsId : null,
 		qrcode : null,
+		channel:null,
 	});
 	
 	const { initialStore } = reaxel_initial();
@@ -52,6 +53,7 @@ export const reaxel_Recharge = reaxel((ret) => {
 		}
 	},() => [
 		rechargeStore.channelIds,
+	
 		rechargeStore.paymentChannels,
 	]);
 	
@@ -122,15 +124,20 @@ export const reaxel_Recharge = reaxel((ret) => {
 				});
 				return { ...channel, goodsList };
 			});
+			
 			setRechargeState({
 				paymentChannels
 			});
 			/*分开写是因为需要等待reaction执行完*/
 			setRechargeState({
-				channelIds:devicePaymentChannels[0].ids,
+				channelIds:devicePaymentChannels[1].ids,
 			});
 			setRechargeState({
 				goodsId:channelObject.goodsList?.[0]?.id,
+			});
+			
+			setRechargeState({
+				channel:channelObject.channel,
 			});
 			
 			return paymentChannels;
@@ -223,10 +230,12 @@ export const reaxel_Recharge = reaxel((ret) => {
 			},
 			/**@param channelIds {number}*/
 			chooseChannel(channelIds){
+				
 				if(channelIds === rechargeStore.channelIds){
 					return;
 				}
-				const { type,url } = devicePaymentChannels.find(({ids}) => ids === channelIds);
+	
+				const { type,url ,channel} = devicePaymentChannels.find(({ids}) => ids === channelIds);
 				if(type === 2){
 					return window.open(url);
 				}else {
@@ -234,6 +243,7 @@ export const reaxel_Recharge = reaxel((ret) => {
 					if(channelObject.goodsList){
 						setRechargeState({
 							goodsId : channelObject.goodsList[0].id,
+							channel:channel
 						});
 					}
 				}

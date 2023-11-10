@@ -8,7 +8,7 @@
 				width="100% "
 				style="vertical-align: middle"
 			>
-			<img v-if="$parent.$parent.isNew" class="xinrenHD" @click="openNewPlaer" style="cursor: pointer;" :src="imGxinrenlibao" alt="">
+			
 			<img  class="erweima" @click="" :src="imGerweima" alt="">
 		</div>
 		<img

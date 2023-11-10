@@ -297,9 +297,10 @@
 							class = "menu-content"
 							v-if = "activeMenu.type === 'website'"
 						>
+						
 							<div
 								style = "margin-top: 30px"
-								v-html = "activeMenu.secondLevel[this.kind].content"
+								v-html = "httmContent"
 							></div>
 						</div>
 						<!--     网站活动-->
@@ -637,6 +638,7 @@
 					class = "n-m-shell"
 					v-else
 				>
+				
 					<!--          // 一级标题-->
 					<div class = "m-nav-one">
 						<div
@@ -890,7 +892,7 @@
 							>
 								<div
 									style = "margin-top: 30px"
-									v-html = "activeMenu.secondLevel[this.kind].content"
+									v-html = "httmContent"
 								></div>
 							</div>
 							<!--     网站活动-->
@@ -1262,6 +1264,7 @@ export default reaxper({
 				result : "/api/task/open" ,
 				freshAnnounce : "/api/home/is/new" ,
 			} ,
+			httmContent:null,
 		};
 	} ,
 	created () {
@@ -1292,10 +1295,12 @@ export default reaxper({
 			if ( nv.name === "Home" && this.$store.state.account.noticControner === 1 ) this.isShow = true;
 		} ,
 		isShow (nv) {
+			
 			!nv || this.getMenu(this.isHeaderTask);
 			// nv ? document.querySelector("body").setAttribute("style" , "overflow:hidden;") : document.body.removeAttribute("style");
 		} ,
 		kind (nv) {
+			
 			if ( this.activeMenu.type === "roll" ) return this.getRollData(nv);
 			if ( this.activeMenu.type === "taskbox" ) return this.getTaskData(nv);
 			if ( this.activeMenu.type === "activity" ) return this.getTaskData(nv);
@@ -1311,6 +1316,8 @@ export default reaxper({
 	} ,
 	mounted () {
 		if ( this.$store.state.account.noticControner === 2 ) this.agreement = true;
+
+		
 	} ,
 	methods : {
 		async getCell () {
@@ -1476,7 +1483,11 @@ export default reaxper({
 						return this.getActive();
 					}
 				});
+				
 				this.menu = res.data;
+				
+				this.httmContent=this.nodeParse(res.data[0].secondLevel[0].content,res.data[0].secondLevel[0].moveImage)
+				
 			});
 		} ,
 		getRollData (rollType = 0) {
@@ -1601,6 +1612,22 @@ export default reaxper({
 				this.$wealfare(true , false);
 			}
 		} ,
+		//node节点转换
+		nodeParse(str,url){
+			if( !this.isPhone){
+				return str;
+			}
+			const template = `<div class='child'>${str}</div>`;
+			let tempNode = document.createElement('div');
+			tempNode.innerHTML = template;
+			
+			const node=tempNode.firstChild.getElementsByTagName('img')[0]
+			//node.setAttribute('src','https://picture.hzqinyun.com'+url)
+			node.style.width='100%'
+
+			return tempNode.firstChild.innerHTML;
+
+		}
 	} ,
 });
 </script>

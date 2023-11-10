@@ -26,7 +26,7 @@
 		<img :src="imgFooter" width="280" />
 
 		<p>温馨提示：适度娱乐 切勿沉迷 注意账号保护 谨防上当受骗</p>
-		<p>杭州皎展网络科技有限公司 | ICP备案号：浙ICP备2023002015号</p>
+		<p>{{ companyInfo }}</p>
 		<p
 			
 		>
@@ -46,9 +46,10 @@
 <script>
 export default reaxper({
 	status() {
-		const { baseInfo } = reaxel_initial().initialStore;
+		const { baseInfo,companyInfo } = reaxel_initial().initialStore;
 		return {
 			baseInfo,
+			companyInfo
 		};
 	},
 	data() {
