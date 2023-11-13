@@ -4,7 +4,7 @@
  * @Autor: cjw
  * @Date: 2023-11-08 18:44:32
  * @LastEditors: cjw
- * @LastEditTime: 2023-11-08 19:09:23
+ * @LastEditTime: 2023-11-13 13:08:02
  */
 export const reaxel_ModifyProfile = reaxel(() => {
 	const {
@@ -38,17 +38,24 @@ export const reaxel_ModifyProfile = reaxel(() => {
 	}
 	
 	async function confirmUpload () {
-		if(!store.choosingAvatar){
-			throw new Error('请先选择头像!');
-		}
-		return requester.post('/api/personal/center/upload/avatar' , {}).
+		return putAction('/api/user/info' , {'avatar':`/avatar/${store.choosingAvatar}.png`}).
 		then(data => {
+		
 			reaxel_user().request_profile();
+		
+	
 			setState({
 				choosingAvatar : null ,
 				choosing : false ,
 			});
+			
+			$Message.success({
+				duration : 7 ,
+				content : `保存成功`,
+			});
 			return data;
+			
+			
 		});
 	}
 	
@@ -105,3 +112,8 @@ import { reaxel_user } from '../';
 
 import { requester } from '../../../requester';
 import { avatars } from './avatars-mapping';
+
+import {  putAction } from "../../../api/manage";
+
+import $store from '../../../store';
+import { Message as $Message } from "view-design";

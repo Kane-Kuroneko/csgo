@@ -9,7 +9,7 @@ export const avatars = [
 	{ url: img7 },
 	{ url: img8 },
 	{ url: img9 },
-].map(obj => _.assign(obj, { id: Math.random().toString() }));
+].map((obj,index) => _.assign(obj, { id:index}));
 
 import img from "@/assets/image/avatars/img.png";
 import img1 from "@/assets/image/avatars/img_1.png";

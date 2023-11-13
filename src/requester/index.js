@@ -40,6 +40,7 @@ export const requester = (function () {
 				userStore ,
 				openLoginModal,
 			} = reaxel_user();
+			
 			return fetch(target , {
 				method : "POST",
 				credentials : "include" ,
@@ -51,6 +52,38 @@ export const requester = (function () {
 				} ,
 			}).then(res => res.json()).
 			then((json) => {
+				if ( json.code === 200 && !json.errMsg ) {
+					return json.data;
+				} else if ( json.errCode === 104 ) {
+					openLoginModal();
+					throw {message:json.errMsg};
+				}else {
+					throw {message:json.errMsg};
+				}
+			});
+		} ,
+		/**
+		 * @param url {string}
+		 * @param requestInit {Partial<RequestInit>}
+		 */
+		put (url , requestInit= {}) {
+			let target = url.startsWith('http') ? url : `${serverPath}${ url }` ;
+			const {
+				userStore ,
+				openLoginModal,
+			} = reaxel_user();
+			return fetch(target , {
+				method : "put",
+				credentials : "include" ,
+				...requestInit,
+				headers : {
+					"Content-Type" : "application/json" ,
+					"Token" : userStore.token ,
+					...(requestInit?.headers || {}),
+				} ,
+			}).then(res => res.json()).
+			then((json) => {
+				
 				if ( json.code === 200 && !json.errMsg ) {
 					return json.data;
 				} else if ( json.errCode === 104 ) {

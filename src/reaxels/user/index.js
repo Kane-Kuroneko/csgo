@@ -127,6 +127,7 @@ export const reaxel_user = reaxel((ret) => {
 		}
 		return requester.get(`/api/user/info`).then((data) => {
 			setState({ profile : data });
+			$store.commit("account/setUser" , Object.assign({} , $store.state.account.user , data));
 			crayon.gold('userInfo',data);
 			return data;
 		});
