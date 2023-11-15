@@ -14,6 +14,7 @@
 					@click="chooseAvatar(id)"
 					:src="url"
 					:key="id"
+					
 					width="90"
 					height="90"
 					:class="{selected:id===choosingAvatar}"

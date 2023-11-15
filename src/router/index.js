@@ -273,6 +273,7 @@ const router = new VueRouter({
 	linkActiveClass : 'active' ,
 	scrollBehavior (to , from , savedPosition) {
 		// document.body.scrollTop = 0;
+		
 		if ( to.name === 'helpCenter' ) return;
 		if ( savedPosition ) {
 			return savedPosition;
@@ -292,12 +293,15 @@ const router = new VueRouter({
 router.beforeEach((to , from , next) => {
 	axios.defaultSource.cancel('切换路由取消请求');
 	axios.defaultSource = axios.CancelToken.source(); // 刷新 defaultSource
+	//http://47.92.247.123/page/helpcenter/activity
+	//http://192.168.5.109:8080/page/helpcenter/activity
 	if ( !to.name ) next('/');
 	if ( to.matched.some(r => r.meta.requiresAuth) ) {
 		const token = localStorage.getItem('token');
 		if ( token && token !== 'undefined' ) {
 			next();
 		} else {
+			
 			// 没有登录的时候显示登录
 			Login.show();
 			let name = from.name || 'Home';

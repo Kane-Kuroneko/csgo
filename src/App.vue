@@ -169,6 +169,7 @@ export default reaxper({
 			if ( nv.id ) {
 				createSocket(process.env.VUE_APP_LINK_WS + `/wss/drop/${ this.userId }` , "drop");
 			}
+			
 			// 未登录
 			if ( JSON.stringify(nv) === "{}" ) {
 				this.isTime = true;
@@ -178,18 +179,18 @@ export default reaxper({
 				clearInterval(this.timer);
 			}
 			// 新人任务未完成
-			if ( JSON.stringify(nv) !== "{}" && nv.status < 5 ) {
+			if ( JSON.stringify(nv) !== "{}" && nv.status < 4 ) {
 				this.isNew = true;
 				this.wealfareCount();
 			}
 			// 新人任务完成 弹指南
-			if ( JSON.stringify(nv) !== "{}" && nv.status === 5 ) {
+			if ( JSON.stringify(nv) !== "{}" && nv.status === 4 ) {
 				this.isNew = false;
 				this.isTime = false;
-				postAction("/api/user/update/status" , { status : 6 });
+				postAction("/api/user/update/status" , { status : 4 });
 			}
 			// 新人任务完成全部不显示
-			if ( JSON.stringify(nv) !== "{}" && nv.status === 6 ) {
+			if ( JSON.stringify(nv) !== "{}" && nv.status === 4 ) {
 				this.isNew = false;
 				this.isTime = false;
 				clearInterval(this.timer);

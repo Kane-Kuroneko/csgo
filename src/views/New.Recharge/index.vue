@@ -5,7 +5,7 @@
 		<HrTitle title="获取钻石"/>
 		<Tabs :tabs="tabs" :selection="store.selection" />
 		
-		<div class="main-content">
+		<div class="main-content" v-if="store.selection=='buy-precious'">
 			<p class="tips" style="font-size: 20px;margin-top: 20px;">选择支付渠道</p>
 			<div
 				v-if="reax_Recharge.devicePaymentChannels"
@@ -43,8 +43,9 @@
 						width="94"
 						height="88"
 						:src="`https://picture.hzqinyun.com${precious.goodsImg}`"
-						style="margin:22px 0;"
+						style="margin:22px 0;margin-bottom:10px"
 					>
+					<span v-if="precious.giving" style="color: #C43333;"><span>+{{ precious.giving }}</span> <span style="position: relative;top: -1px;">💎</span> </span>
 					<span style="color: #FF9900;font-size: 18px;font-weight: bold;">${{ precious.goodsPrice }}</span>
 				</div>
 			</div>
@@ -95,7 +96,7 @@
 					
 				>
 					<span>${{ reax_Recharge.itemObject.goodsPrice }}≈¥{{ (reax_Recharge.itemObject.goodsPrice * rechargeStore.rate).toFixed(2) }}</span>
-					<span>立即支付</span>
+					<span>支付完成</span>
 				</div>
 			</div>
 			<p style="color: white;font-size: 24px;margin-top: 150px;">
@@ -113,6 +114,42 @@
 				网站内物品禁止转卖交易！
 			</p>
 		</div>
+		<!-- 充值码 -->
+		<div class="main-content" v-if="store.selection=='recharge-code'">
+			<div class = "charge-code">
+				<div
+					class = "code-box"
+					
+				>
+					
+					<div style = "width: 3.6rem" >
+						<!-- <span>100刀以上购买充值卡97折，联系qq: 106318800</span> -->
+						<Input
+							v-model = "chargeCode"
+							size = "large"
+							placeholder = "请输入购买码"
+						/>
+					</div>
+					<div>
+						<div
+							@click = "requestPayCDK(chargeCode)"
+							class = "default-btn pay-now"
+						>
+							<span >立即购买</span>
+							
+						</div>
+					</div>
+					<div
+						class = "charge-problem"
+						style = "margin: 0.6rem 0"
+					>
+						<p>购买遇到了问题？
+							<span @click = "goHelp">前往解决 ></span>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </template>
 
@@ -127,14 +164,14 @@ const tabs = [
 		} ,
 		iconUrl : imgDiamond ,
 	},
-	// {
-	// 	title : "充值码" ,
-	// 	key : 'recharge-code' ,
-	// 	onSelect (key) {
-	// 		setState({ selection : key });
-	// 	} ,
-	// 	iconUrl : '' ,
-	// },
+	{
+		title : "充值码" ,
+		key : 'recharge-code' ,
+		onSelect (key) {
+			setState({ selection : key });
+		} ,
+		iconUrl : imgRMB ,
+	},
 ];
 const {store,setState} = orzMobx({
 	selection : tabs[0].key,
@@ -147,6 +184,7 @@ const reax_Recharge = reaxel_Recharge(),{
 	requestGetRechargeQrcode,
 	cancelRecharge,
 	finishRecharge,
+	requestPayCDK
 } = reax_Recharge; 
 const reax_Initial = reaxel_initial(),{
 	initialStore,
@@ -161,9 +199,16 @@ export default reaxper({
 			initialStore,
 			reax_Recharge,
 			store,
+			
+		}
+	},
+	data () {
+		return {
+			chargeCode:'',
 		}
 	},
 	methods:{
+		
 		cancelRecharge,
 		requestQrCode(){
 			requestGetRechargeQrcode().then(() => {
@@ -185,10 +230,37 @@ export default reaxper({
 				
 			})
 		},
+		requestPayCDK(chargeCode){
+			requestPayCDK(chargeCode).then(({message}) => {
+				this.$Message.success({content:message});
+			}).catch(({message}) => {
+				
+				this.$Modal.error({ content : message });
+			}).finally(() => {
+				
+			})
+		},
 		goHelp(val){
 			this.$router.push('/page/helpcenter/'+val)
 			document.documentElement.scrollTop=0
 		},
+		codePay () {
+			// let _this = this;
+			// setTimeout(() => {
+			// 	let parmas = { code : this.chargeCode };
+			// 	if ( this.chargeCode.length === 0 ) return this.$Message.info("请输入正确的充值码");
+			// 	this.loding = true;
+			// 	postAction(this.url.payCode , parmas).then((res) => {
+			// 		this.getUser();
+			// 		this.$Modale("充值成功" , this.tips , 0);
+			// 		this.loding = false;
+			// 	}).catch((e) => {
+			// 		_this.$Message.error(e.response.data.errMsg);
+			// 		this.loding = false;
+			// 	});
+			// } , 1000);
+		} ,
+
 	},
 	created () {
 		reax_Recharge.requestGetPaymentChannels().then(data => {
@@ -200,6 +272,7 @@ export default reaxper({
 		return {
 			tabs,
 			imgDiamond,
+			imgRMB,
 		}
 	},
 	components : {
@@ -215,6 +288,8 @@ import { reaxel_initial } from '@/reaxels/initial';
 import {Tabs} from '@/New.Components';
 import { HrTitle } from '@/New.Components';
 import imgDiamond from '@/New.Assets/icon-diamond.svg';
+import imgRMB from '@/New.Assets/Vector.svg';
+
 import QrCode from "vue-qrcode-component";
 </script>
 
@@ -324,5 +399,8 @@ import QrCode from "vue-qrcode-component";
 			}
 		}
 	}
+}
+.code-box /deep/ input{
+	background-color: #fff ;
 }
 </style>

@@ -103,9 +103,9 @@ new Vue({
 
 obsReaction(
 	() => {
-		if (!reaxel_user().userStore.token) {
-			router.push("/");
-		}
+		// if (!reaxel_user().userStore.token) {
+		// 	router.push("/");
+		// }
 	},
 	() => [reaxel_user().userStore.token],
 );

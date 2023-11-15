@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+Disallow: /bin/
+Sitemap: https://www.97hash.com/sitemap.xml

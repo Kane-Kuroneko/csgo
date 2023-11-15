@@ -48,12 +48,22 @@
 						class = "default-btn user-btn"
 					>取消
 					</div>
+					<!-- 原逻辑 -->
 					<div
 						@click = "changeUserName(disable.uesrname)"
-						class = "default-btn user-btn"  style="opacity: 0;"
+						class = "default-btn user-btn" v-if="false"
 					>
 						{{ disable.uesrname ? "保存" : "修改" }}
 					</div>
+					<!-- end -->
+					<!-- 随机名字 -->
+					<div
+						@click = "randomUserName(disable.uesrname)"
+						class = "default-btn user-btn"  
+					>
+						随机
+					</div>
+					<!-- end -->
 				</div>
 				<div class = "info-item">
 					<span>登录密码：</span>
@@ -304,6 +314,7 @@ export default reaxper({
 				change : "/api/activity/choose/portrait/box" ,
 				id : "/api/user/card/info" ,
 			} ,
+			nameArr:[]
 		};
 	} ,
 	created () {
@@ -364,6 +375,26 @@ export default reaxper({
 			this.changeNameAndLink("name");
 			this.disable.uesrname = false;
 		} ,
+		randomUserName(){
+			//随机数预存本地
+			if(this.nameArr.length>0){
+				let randonm=Math.floor(Math.random()*20)
+				this.userLocal.name=this.nameArr[randonm]
+				this.changeInfoPart({name:this.userLocal.name})
+				return
+			}
+			return new Promise((resolve , reject) => {
+				getAction("/api/personal/center/randomname").then(res => {
+					
+					this.nameArr=res.data
+					let randonm=Math.floor(Math.random()*20)
+					this.userLocal.name=res.data[randonm]
+					this.changeInfoPart({name:this.userLocal.name})
+					resolve(res.data);
+					
+				});
+			});
+		},
 		changeNameAndLink (flag) {
 			//原地修改昵称和链接
 			if ( (this.user[flag] === this.userLocal[flag] || this.user[flag] === "") && flag !== "tradeUrl" ) {
@@ -435,6 +466,14 @@ export default reaxper({
 		} ,
 		changeInfoFunc () {
 			putAction("/api/user/info" , this.user).then(res => {
+				this.getUser();
+				this.$Message.success("修改成功");
+			}).catch(err => {
+				this.$Message.error(err.response.data.errMsg);
+			});
+		} ,
+		changeInfoPart (obj) {
+			putAction("/api/user/info" , obj).then(res => {
 				this.getUser();
 				this.$Message.success("修改成功");
 			}).catch(err => {

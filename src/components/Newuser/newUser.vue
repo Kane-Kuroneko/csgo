@@ -111,6 +111,7 @@
 								</div>
 							</div>
 							<!--第二步福利-->
+							
 							<div v-if="step.steps === 2" class="step-two step-item">
 								<div v-show="step.two === 1" align="center">
 									<img
@@ -134,9 +135,9 @@
 								</div>
 								<div class="step-two-one" v-show="step.two === 2">
 									<div class="roll-box">
-										<div>
+										<!-- <div>
 											<img src="../../assets/image/newuser/chargeroll.png" alt="" style="width: 100%" />
-										</div>
+										</div> -->
 										<div>
 											<img src="../../assets/image/newuser/chargebox.png" alt="" style="width: 100%" />
 										</div>
@@ -228,10 +229,12 @@
 											购买成功后饰品将存至个人中心-我的背包
 										</p>
 									</div>
-									<div class="phone-code" v-else>
-										<div class="register-qrcode" v-show="codeShow">
-											<qr-code :text="payUrl" :size="115"></qr-code>
+								
+									<div class="phone-code" v-if="qrcode">
+										<div class="register-qrcode-pc" style="margin: 0 auto;" >
+											<qr-code style="position: relative;right: 10px;" :text="qrcode" :size="130"></qr-code>
 										</div>
+										<div class="default-btn upgrade-btn open-register" @click="finishRecharge">支付完成</div>
 									</div>
 									<div class="excharge-rate hide-ipad hide-p">
 										<p>
@@ -240,7 +243,7 @@
 										</p>
 										<!--                    <p>美元汇率已实际支付为准</p>-->
 									</div>
-									<div class="fix-btn" v-show="isPhoneCode">
+									<div class="fix-btn" v-show="isPhoneCode" v-if="!qrcode">
 										<div class="default-btn upgrade-btn open-register" @click="payHandle">立即充值</div>
 									</div>
 								</div>
@@ -365,12 +368,14 @@ const reax_Initial = reaxel_initial(),
 const reax_User = reaxel_user(),
 	{} = reax_User;
 const reax_Recharge = reaxel_Recharge(),
-	{} = reax_Recharge;
+	{
+		finishRecharge,
+	} = reax_Recharge;
 
 export default reaxper({
 	status() {
 		const { devicePaymentChannels, itemObject } = reax_Recharge;
-		const { rate, channelIds, paymentChannels, goodsId } = reax_Recharge.rechargeStore;
+		const { rate, channelIds, paymentChannels, goodsId,qrcode } = reax_Recharge.rechargeStore;
 
 		return {
 			reax_Initial,
@@ -382,6 +387,8 @@ export default reaxper({
 			channelIds,
 			rate,
 			payWay: devicePaymentChannels || [],
+			qrcode,
+			
 		};
 	},
 	name: "newUser",
@@ -396,6 +403,7 @@ export default reaxper({
 			type: Boolean,
 		},
 	},
+	inject: ["showWealfare"],
 	data() {
 		return {
 			router,
@@ -483,6 +491,8 @@ export default reaxper({
 				transform: `translateX(-${203 * this.amountIndex}px)`,
 				transition: `transform .2s cubic-bezier(.54,.91,.63,.99) 0s`,
 			};
+			
+			reax_Recharge.rechargeStore.qrcode=''
 		},
 		getWealfare() {
 			getAction(this.url.wealfare).then(res => {
@@ -569,7 +579,10 @@ export default reaxper({
 				amount: reax_Recharge.itemObject.goodsPrice,
 				goodsId: reax_Recharge.itemObject.id,
 			};
-			reax_Recharge.requestGetRechargeQrcode().catch(e => {
+			
+			reax_Recharge.requestGetRechargeQrcode().then(res=>{
+				this.refresh_newPLay()
+			}).catch(e => {
 				if ( e.response.data.errCode === 505 ) {
 					return this.$nameAuth(2);
 				}
@@ -668,6 +681,28 @@ export default reaxper({
 				}
 			}, 1000);
 		},
+		finishRecharge(){
+			
+			finishRecharge().then(({message}) => {
+				this.refresh_newPLay()
+				this.$Modal.error({ content : message });
+
+			}).catch(({message}) => {
+				// this.$Message.error({content:message,duration:5});
+				// this.$Notice.error({desc:message,});
+				
+				this.$Modal.error({ content : message });
+			}).finally(() => {
+				
+			})
+		},
+		refresh_newPLay(){
+			let _this=this;
+				this.show=!this.show
+				setTimeout(function(){
+					_this.show=!_this.show
+				},1000)
+		}
 	},
 	mounted() {
 		reax_Recharge.requestGetRate();
@@ -913,6 +948,14 @@ html[data-reaxel-reactive-device="PC-min-1366"] {
 	padding: 15px 24px;
 	background: url("../../assets/image/newuser/codebg.png") no-repeat top left / contain;
 }
+.register-qrcode-pc {
+	width: 170px;
+	height: 180px;
+	margin-left: 10px;
+	padding: 15px 24px;
+	background: url("../../assets/image/pay/zhifubao.png") no-repeat top left / contain;
+}
+
 
 .box-opening {
 	width: 597px;

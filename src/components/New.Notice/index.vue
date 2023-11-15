@@ -1617,13 +1617,15 @@ export default reaxper({
 			if( !this.isPhone){
 				return str;
 			}
+			
 			const template = `<div class='child'>${str}</div>`;
 			let tempNode = document.createElement('div');
 			tempNode.innerHTML = template;
 			
 			const node=tempNode.firstChild.getElementsByTagName('img')[0]
-			//node.setAttribute('src','https://picture.hzqinyun.com'+url)
-			node.style.width='100%'
+			node.setAttribute('src','https://picture.hzqinyun.com'+url)
+			node.style.width='75%'
+			
 
 			return tempNode.firstChild.innerHTML;
 

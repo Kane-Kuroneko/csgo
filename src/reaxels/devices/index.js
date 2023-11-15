@@ -121,6 +121,7 @@ export const reaxel_Device = reaxel((ret) => {
 			printDeviceInfo(additionalText = ret.deviceType){
 				if(process.env.NODE_ENV === "production") return;
 				//开发环境注释设备信息
+				return
 				const info = `DPR : ${deviceStore.DPR}
 				PAR : ${deviceStore.PAR}
 				UA : ${deviceStore.UA}

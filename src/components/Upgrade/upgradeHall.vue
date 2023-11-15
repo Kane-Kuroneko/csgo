@@ -61,7 +61,7 @@
 			class = "hall-container"
 		>
 			<!--      故事区-->
-			<div class = "story-container">
+			<div class = "story-container" v-show="false">
 				<div class = "store-box">
 					<div
 						class = "story-item cursor"

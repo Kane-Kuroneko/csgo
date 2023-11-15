@@ -122,6 +122,7 @@ export const reaxel_Recharge = reaxel((ret) => {
 					}() : 0 ;
 					return Object.assign({},goods,{giving});
 				});
+				
 				return { ...channel, goodsList };
 			});
 			
@@ -129,8 +130,9 @@ export const reaxel_Recharge = reaxel((ret) => {
 				paymentChannels
 			});
 			/*分开写是因为需要等待reaction执行完*/
+			
 			setRechargeState({
-				channelIds:devicePaymentChannels[1].ids,
+				channelIds:devicePaymentChannels[1].ids,//默认取第二
 			});
 			setRechargeState({
 				goodsId:channelObject.goodsList?.[0]?.id,
@@ -166,11 +168,14 @@ export const reaxel_Recharge = reaxel((ret) => {
 				goodsId:itemObject.id,
 			})
 		}).then((data) => {
+			console.log('chnaelPay',data.action)
 			switch ( data.action ){
 				case "open": {
-					window.open(data.url,"_self");break;
+					 window.open(data.url,"_self");break;
+					//window.open(data.url,"new");break;
 				};
 				case "checkout":{
+					zfwc_refesh()
 					localStorage.setItem("callbackHTML" , data.data);
 					if ( navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i) ) {
 						window.location.href = "/checkstand.html";
@@ -180,6 +185,7 @@ export const reaxel_Recharge = reaxel((ret) => {
 					break;
 				};
 				case "cashier" : {
+					zfwc_refesh()
 					const win = window.open('','');
 					win.document.write(data.url);
 					return;
@@ -215,7 +221,45 @@ export const reaxel_Recharge = reaxel((ret) => {
 			}
 		})
 	}
-	
+		/**
+	 * @description 支付完成确认付款
+	 * @return 
+	 */
+	function zfwc_refesh(){
+		$Modal.confirm({
+			title:'支付完成',
+			icon:null,
+			onOk:function(){
+					finishRecharge().catch(({message}) => {
+						// $Modal.remove()
+						$Message.error({
+							content : message,
+							duration:3,
+							background:false,
+							
+						})
+					});
+				
+			},
+		})
+	}
+	/**
+	 * @description 立即购买CDK
+	 * @return {Promise<void>}
+	 */
+	async function requestPayCDK(val) {
+		
+		return requester.post(`/api/pay/code`,{
+			body:JSON.stringify({
+				code:val
+				
+			})
+		}).then((data) => {
+			reaxel_user().request_profile();
+			return {message : "充值成功!"};
+			//setRechargeState({rate:data});
+		})
+	}
 	return () => {
 		return ret = {
 			rechargeStore,
@@ -225,6 +269,7 @@ export const reaxel_Recharge = reaxel((ret) => {
 			requestGetRate,
 			requestGetRechargeQrcode,
 			finishRecharge,
+			requestPayCDK,
 			cancelRecharge(){
 				setRechargeState({qrcode : null,});
 			},
@@ -279,3 +324,5 @@ export const reaxel_Recharge = reaxel((ret) => {
 
 import { reaxel_user } from '@/reaxels/user';
 import { reaxel_initial } from '@/reaxels/initial';
+
+import { Modal as $Modal,Message as $Message, } from "view-design";

@@ -623,7 +623,5 @@ export default {
 	border: 0px solid #030000;
 	box-shadow: 0px 1px 50px 0px rgba(0, 0, 0, 0.9);
 }
-.search-box /deep/ input{
-	background-color: #fff ;
-}
+
 </style>

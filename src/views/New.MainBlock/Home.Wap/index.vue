@@ -7,6 +7,7 @@
 				height="auto"
 				width="100% "
 				style="vertical-align: middle"
+				@click="$router.push('page/instrutions')"
 			>
 		
 			

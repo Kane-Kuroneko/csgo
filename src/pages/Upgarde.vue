@@ -1727,7 +1727,8 @@ export default reaxper({
 			});
 		} ,
 		resetData () {
-			if ( this.isUpgrade ) return;
+			
+			if ( !this.isUpgrade ) return;
 			this.needToUpgradeToItems = { value : 0 };
 			this.maxSumScale = 0;
 		} ,
@@ -1736,6 +1737,7 @@ export default reaxper({
 			this.selectArticle = true;
 		} ,
 		resetDesir () {
+			
 			if ( !this.isUpgrade ) return;
 			this.desiredItem = { value : 0 };
 		} ,

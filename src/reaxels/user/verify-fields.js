@@ -1,3 +1,11 @@
+/*
+ * @Description: 
+ * @Version: 2.0
+ * @Autor: cjw
+ * @Date: 2023-11-03 15:08:59
+ * @LastEditors: cjw
+ * @LastEditTime: 2023-11-15 12:38:24
+ */
 /**
  * 表单验证
  */
@@ -7,7 +15,8 @@ export const verify = {
 		const regExp = /^[1][3,4,5,6,7,8,9][0-9]{9}$/;
 		const {result,failed} = new Verifier();
 		if (!value) {
-			return failed('请输入手机号');
+			//return failed('请输入手机号');
+			return result;
 		} else if(!regExp.test(value)) {
 			return failed('手机号格式不正确! ')
 		}else {

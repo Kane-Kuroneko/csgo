@@ -15,10 +15,10 @@ export const reaxel_user = reaxel((ret) => {
 		 * @type {'login'|'register'}
 		 */
 		mode : "register",
-		input_telNum : '19906793446' ,
+		input_telNum : '' ,
 		register : {
 			verifyCodeTimer : 0,
-			input_password : 'qcynTest9999' ,
+			input_password : '' ,
 			input_verifyCode : '' ,
 			input_promotionCode : '' ,
 			checkbox_97hashServiceAgreement : false ,
@@ -261,7 +261,8 @@ export const reaxel_user = reaxel((ret) => {
 				loginCallback = null;
 			},
 			get isValidTelNum(){
-				return verify.telNum(store.input_telNum);
+				 return verify.telNum(store.input_telNum);
+				
 			},
 			_dev_fetch_clear_user_
 		};
